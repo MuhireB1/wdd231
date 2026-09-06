@@ -1,0 +1,49 @@
+@media only screen and (min-width: 38rem) {
+
+    .hamburger {
+        display: none;
+    }
+
+    .navigation {
+        display: block;
+    }
+
+    .navigation ul {
+        flex-direction: row;
+    }
+
+    header {
+        grid-template-columns: 24px auto;
+    }
+
+    /* ---------- LARGE SCREEN NAVIGATION ---------- */
+
+    .navigation {
+        display: block;
+        grid-column: 1 / -1;
+    }
+
+    .navigation ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .navigation li {
+        flex: 1;
+    }
+
+    .navigation a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: none;
+        border-right: 1px solid #e6e93f;
+    }
+
+    .navigation li:last-child a {
+        border-right: none;
+    }
+
+    
+}
