@@ -1,0 +1,500 @@
+/* =========================================
+   GLOBAL / ROOT
+========================================= */
+
+:root {
+    --primary-color: #003233;
+    --text-color: #ffffff;
+    --h2-color: #FFD166;
+    --h2-border-color: #00B4D8;
+    --light-border: rgba(255, 255, 255, 0.25);
+    --light-bg: rgba(255, 255, 255, 0.08);
+
+    --font-family: "Roboto", sans-serif;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--font-family);
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    width: 100%;
+    min-height: 80px;
+    padding: 1rem;
+
+    background-color: var(--primary-color);
+    color: var(--text-color);
+
+    border-bottom: 1px solid var(--light-border);
+}
+
+header img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+header span {
+    flex: 1;
+    min-width: 0;
+
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   HAMBURGER BUTTON
+========================================= */
+
+.hamburger {
+    position: relative;
+
+    flex: 0 0 44px;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    border: 1px solid var(--light-border);
+    border-radius: 5px;
+
+    background: transparent;
+    cursor: pointer;
+}
+
+
+/* Top and bottom lines */
+
+.hamburger::before {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 24px;
+    height: 16px;
+
+    border-top: 2px solid var(--text-color);
+    border-bottom: 2px solid var(--text-color);
+
+    transform: translate(-50%, -50%);
+}
+
+
+/* Middle line */
+
+.hamburger::after {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 24px;
+    height: 2px;
+
+    background-color: var(--text-color);
+
+    transform: translate(-50%, -50%);
+}
+
+
+/* Prevent hover twitching */
+
+.hamburger:hover {
+    background-color: var(--light-bg);
+}
+
+.hamburger:focus-visible {
+    outline: 3px solid var(--text-color);
+    outline-offset: 2px;
+}
+
+.hamburger:active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+nav {
+    display: none;
+
+    width: 100%;
+    background-color: var(--primary-color);
+}
+
+nav.show {
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+nav li {
+    width: 100%;
+    border-bottom: 1px solid var(--light-border);
+}
+
+nav a {
+    display: block;
+
+    width: 100%;
+    padding: 0.9rem 1rem;
+
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 700;
+
+    /* Prevent layout twitching */
+    border: 1px solid transparent;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: var(--text-color);
+    color: var(--primary-color);
+}
+
+nav a:focus-visible {
+    outline: 3px solid var(--text-color);
+    outline-offset: -3px;
+}
+
+nav a:active {
+    background-color: var(--text-color);
+    color: var(--primary-color);
+}
+
+nav li.active a {
+    background-color: var(--light-bg);
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+main {
+    width: min(100% - 2rem, 1200px);
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+h1,
+h2 {
+    margin-top: 0;
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+h2 {
+    margin: 0 0 1rem;
+    padding: 0.6rem 1rem;
+
+    color: var(--h2-color);
+    text-align: center;
+
+    border: 2px solid var(--h2-border-color);
+    border-radius: 6px;
+
+    line-height: 1.2;
+    font-size: 1.3rem;
+}
+
+
+
+/* =========================================
+   STUDENT INFORMATION
+========================================= */
+
+.studentInfo {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+.studentInfo > div {
+    min-width: 0;
+
+    padding: 1.25rem;
+
+    border: 1px solid var(--light-border);
+    border-radius: 8px;
+
+    background-color: var(--light-bg);
+}
+
+.aboutMe p {
+    margin-bottom: 0;
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================
+   STUDENT PHOTO
+========================================= */
+
+.studentPhoto img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+
+    margin: 0 auto;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   COURSES
+========================================= */
+
+.studentInfo1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+.studentInfo1 ul {
+    display:flex;
+    justify-content:space-around;
+}
+
+.WebCertificateCourses {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    min-width: 0;
+    width: 100%;
+    padding: 1.25rem;
+
+    border: 1px solid var(--light-border);
+    border-radius: 8px;
+
+    background-color: var(--light-bg);
+}
+
+
+.courses {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+
+    width: 100%;
+    margin: 0 0 1rem;
+    padding: 0;
+
+    list-style: none;
+}
+
+.courses li {
+    padding: 0.5rem 1rem;
+
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+
+    color: var(--text-color);
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.courses li:hover {
+    background-color: var(--text-color);
+    color: var(--primary-color);
+}
+
+.courseList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+
+    width: 100%;
+    margin: 0;
+    padding-left: 0;
+
+    text-align: center;
+}
+
+
+.courseList p {
+    margin-bottom: 0;
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================
+   SOCIAL MEDIA
+========================================= */
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 1rem;
+
+    padding: 1rem;
+}
+
+.social-media a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.social-media a:hover {
+    background-color: var(--light-bg);
+    transform: translateY(-2px);
+}
+
+.social-media a:focus-visible {
+    outline: 2px solid var(--text-color);
+    outline-offset: 3px;
+}
+
+.social-media img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 0.35rem;
+
+    margin-top: 1rem;
+    padding: 1.5rem 1rem;
+
+    border-top: 1px solid var(--light-border);
+
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    overflow-wrap: break-word;
+}
+
+#last-modified {
+    font-size: 0.85rem;
+}
+
+#last-modified-date {
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   VERY SMALL SCREENS
+========================================= */
+
+@media (max-width: 360px) {
+
+    main {
+        width: calc(100% - 1.5rem);
+    }
+
+    header {
+        padding: 0.75rem;
+    }
+
+    header span {
+        font-size: 1.1rem;
+    }
+
+    .studentInfo > div,
+    .WebCertificateCourses {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+}

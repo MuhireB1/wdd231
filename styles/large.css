@@ -1,0 +1,129 @@
+/* =========================================
+   LARGE SCREEN
+========================================= */
+
+@media (min-width: 768px) {
+
+    /* -------------------------
+       HEADER
+    ------------------------- */
+
+    header {
+        padding: 1rem 2rem;
+    }
+
+    /* Hide hamburger on desktop */
+    #nav-button {
+        display: none;
+    }
+
+
+    /* -------------------------
+       NAVIGATION
+    ------------------------- */
+
+    nav {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    nav li {
+        width: auto;
+        border-bottom: none;
+    }
+
+    nav a {
+        padding: 1rem 1.5rem;
+    }
+
+
+    /* -------------------------
+       MAIN
+    ------------------------- */
+
+    main {
+        padding: 3rem 0;
+    }
+
+    h1 {
+        font-size: 2.25rem;
+    }
+
+
+    /* -------------------------
+       STUDENT INFORMATION
+    ------------------------- */
+
+    .studentInfo {
+        grid-template-columns: 2fr 1fr;
+        align-items: stretch;
+        gap: 1.5rem;
+    }
+
+    .aboutMe {
+        min-width: 0;
+    }
+
+    .studentPhoto {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .studentPhoto img {
+        max-width: 250px;
+    }
+
+
+    /* -------------------------
+       COURSES
+    ------------------------- */
+
+    .studentInfo1 {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .WebCertificateCourses {
+        padding: 1.5rem;
+    }
+
+
+    /* -------------------------
+       SOCIAL MEDIA
+    ------------------------- */
+
+    .social-media {
+        padding: 1.5rem;
+    }
+}
+
+
+/* =========================================
+   EXTRA LARGE
+========================================= */
+
+@media (min-width: 1000px) {
+
+    header {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    nav a {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    main {
+        width: min(100% - 4rem, 1200px);
+    }
+
+    .studentInfo {
+        grid-template-columns: 2.2fr 1fr;
+    }
+}
