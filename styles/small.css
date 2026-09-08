@@ -498,3 +498,68 @@ footer p {
         font-size: 1.2rem;
     }
 }
+.courseList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 0;
+}
+
+.course-card {
+    list-style: none;
+    padding: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    color: #222;
+}
+
+.course-card h3 {
+    margin-top: 0;
+}
+
+.course-card.completed {
+    background-color: #d8f3dc;
+    border-color: #40916c;
+    color: #1b4332;
+}
+
+.course-card.completed::after {
+    content: " ✓ Completed";
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: #2d6a4f;
+}
+
+.courses {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.courses button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.courses button:hover {
+    opacity: 0.8;
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+    .courseList {
+        grid-template-columns: 1fr;
+    }
+
+    .course-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+

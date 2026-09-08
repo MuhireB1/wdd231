@@ -58,7 +58,7 @@ const courses = [
         technology: [
             'Python'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -71,7 +71,7 @@ const courses = [
             'HTML',
             'CSS'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -83,7 +83,7 @@ const courses = [
         technology: [
             'Python'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -95,7 +95,7 @@ const courses = [
         technology: [
             'C#'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -109,7 +109,7 @@ const courses = [
             'CSS',
             'JavaScript'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -126,3 +126,62 @@ const courses = [
         completed: false
     }
 ]
+
+const courseList = document.querySelector('#courseList');
+const totalCredits = document.querySelector('#totalCredits');
+
+function displayCourses(courseArray) {
+    courseList.innerHTML = '';
+
+    courseArray.forEach(course => {
+        const courseCard = document.createElement('li');
+
+        courseCard.classList.add('course-card');
+
+        if (course.completed) {
+            courseCard.classList.add('completed');
+        }
+
+        courseCard.innerHTML = `
+            <h3>${course.subject} ${course.number}</h3>
+            <p>${course.title}</p>
+            <p>${course.credits} credits</p>
+        `;
+
+        courseList.appendChild(courseCard);
+    });
+
+    const credits = courseArray.reduce(
+        (total, course) => total + course.credits,
+        0
+    );
+
+    totalCredits.textContent = `The total credits for courses listed above is ${credits}`;
+}
+
+function filterCourses(subject) {
+    if (subject === 'ALL') {
+        displayCourses(courses);
+    } else {
+        const filteredCourses = courses.filter(
+            course => course.subject === subject
+        );
+
+        displayCourses(filteredCourses);
+    }
+}
+
+document.querySelector('#allBtn').addEventListener('click', () => {
+    filterCourses('ALL');
+});
+
+document.querySelector('#cseBtn').addEventListener('click', () => {
+    filterCourses('CSE');
+});
+
+document.querySelector('#wddBtn').addEventListener('click', () => {
+    filterCourses('WDD');
+});
+
+// Display all courses when the page first loads
+displayCourses(courses);
