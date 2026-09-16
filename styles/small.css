@@ -471,52 +471,53 @@ footer p {
    VERY SMALL SCREENS
 ========================================= */
 
-@media (max-width: 360px) {
-
-    main {
-        width: calc(100% - 1.5rem);
-    }
-
-    header {
-        padding: 0.75rem;
-    }
-
-    header span {
-        font-size: 1.1rem;
-    }
-
-    .studentInfo > div,
-    .WebCertificateCourses {
-        padding: 1rem;
-    }
-
-    h1 {
-        font-size: 1.7rem;
-    }
-
-    h2 {
-        font-size: 1.2rem;
-    }
-}
+/* Default: multi-column layout on larger screens */
 .courseList {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    /* Cards shrink and wrap automatically */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
     gap: 1rem;
+
+    width: 100%;
+    margin: 0;
     padding: 0;
+
+    list-style: none;
 }
 
+
+/* =========================================
+   COURSE CARDS
+========================================= */
+
 .course-card {
-    list-style: none;
+    width: 100%;
+    min-width: 0;
+
     padding: 1rem;
+
     border: 2px solid #ccc;
     border-radius: 8px;
-    background-color: white;
+
+    background-color: #fff;
     color: #222;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .course-card h3 {
     margin-top: 0;
+    margin-bottom: 0.75rem;
 }
+
+.course-card p {
+    margin-bottom: 0;
+}
+
+/* Completed course */
 
 .course-card.completed {
     background-color: #d8f3dc;
@@ -527,7 +528,9 @@ footer p {
 .course-card.completed::after {
     content: " ✓ Completed";
     display: block;
+
     margin-top: 0.5rem;
+
     font-weight: bold;
     color: #2d6a4f;
 }
@@ -551,15 +554,4 @@ footer p {
     opacity: 0.8;
 }
 
-/* Small screens */
-@media (max-width: 600px) {
-    .courseList {
-        grid-template-columns: 1fr;
-    }
-
-    .course-card {
-        width: 100%;
-        box-sizing: border-box;
-    }
-}
 

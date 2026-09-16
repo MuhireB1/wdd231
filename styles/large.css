@@ -131,7 +131,43 @@
 
 @media (max-width: 600px) {
     .courseList {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .course-card {
+        width: 100%;
     }
 }
+
+@media (max-width: 360px) {
+
+    main {
+        width: calc(100% - 1.5rem);
+    }
+
+    header {
+        padding: 0.75rem;
+    }
+
+    header span {
+        font-size: 1.1rem;
+    }
+
+    .studentInfo > div,
+    .WebCertificateCourses {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+}
+
 
