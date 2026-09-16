@@ -11,8 +11,18 @@
     --light-bg: rgba(255, 255, 255, 0.08);
 
     --font-family: "Roboto", sans-serif;
+
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
 }
 
+
+/* =========================================
+   RESET
+========================================= */
 
 * {
     box-sizing: border-box;
@@ -27,6 +37,7 @@ html {
 body {
     margin: 0;
     min-width: 320px;
+    width: 100%;
     background-color: var(--primary-color);
     color: var(--text-color);
     line-height: 1.6;
@@ -47,11 +58,11 @@ img {
 header {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: var(--space-md);
 
     width: 100%;
     min-height: 80px;
-    padding: 1rem;
+    padding: var(--space-md);
 
     background-color: var(--primary-color);
     color: var(--text-color);
@@ -63,6 +74,7 @@ header img {
     width: 50px;
     height: 50px;
     object-fit: contain;
+    flex-shrink: 0;
 }
 
 header span {
@@ -71,6 +83,8 @@ header span {
 
     font-size: 1.3rem;
     font-weight: 700;
+
+    overflow-wrap: anywhere;
 }
 
 
@@ -132,9 +146,6 @@ header span {
     transform: translate(-50%, -50%);
 }
 
-
-/* Prevent hover twitching */
-
 .hamburger:hover {
     background-color: var(--light-bg);
 }
@@ -166,7 +177,7 @@ nav.show {
 
 nav ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 
     width: 100%;
     margin: 0;
@@ -176,7 +187,10 @@ nav ul {
 }
 
 nav li {
-    width: 100%;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+
     border-bottom: 1px solid var(--light-border);
 }
 
@@ -184,13 +198,14 @@ nav a {
     display: block;
 
     width: 100%;
+    min-height: 48px;
+
     padding: 0.9rem 1rem;
 
     color: var(--text-color);
     text-decoration: none;
     font-weight: 700;
 
-    /* Prevent layout twitching */
     border: 1px solid transparent;
 
     transition:
@@ -223,10 +238,17 @@ nav li.active a {
 ========================================= */
 
 main {
-    width: min(100% - 2rem, 1200px);
+    width: calc(100% - 2rem);
+    max-width: 1200px;
+
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: var(--space-xl) 0;
 }
+
+
+/* =========================================
+   HEADINGS
+========================================= */
 
 h1,
 h2 {
@@ -236,12 +258,14 @@ h2 {
 }
 
 h1 {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-lg);
     font-size: 2rem;
 }
 
 h2 {
-    margin: 0 0 1rem;
+    width: 100%;
+
+    margin: 0 0 var(--space-lg);
     padding: 0.6rem 1rem;
 
     color: var(--h2-color);
@@ -255,7 +279,6 @@ h2 {
 }
 
 
-
 /* =========================================
    STUDENT INFORMATION
 ========================================= */
@@ -263,13 +286,17 @@ h2 {
 .studentInfo {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+
+    gap: var(--space-lg);
+
+    width: 100%;
 }
 
 .studentInfo > div {
     min-width: 0;
+    width: 100%;
 
-    padding: 1.25rem;
+    padding: var(--space-lg);
 
     border: 1px solid var(--light-border);
     border-radius: 8px;
@@ -277,15 +304,24 @@ h2 {
     background-color: var(--light-bg);
 }
 
+.aboutMe {
+    min-width: 0;
+}
+
 .aboutMe p {
-    margin-bottom: 0;
-    overflow-wrap: break-word;
+    margin: 0;
+    overflow-wrap: anywhere;
+    word-break: normal;
 }
 
 
 /* =========================================
    STUDENT PHOTO
 ========================================= */
+
+.studentPhoto {
+    min-width: 0;
+}
 
 .studentPhoto img {
     width: 100%;
@@ -299,31 +335,24 @@ h2 {
 
 
 /* =========================================
-   COURSES
+   COURSES SECTION
 ========================================= */
 
 .studentInfo1 {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    margin-top: 1.25rem;
-}
+    width: 100%;
 
-.studentInfo1 ul {
-    display:flex;
-    justify-content:space-around;
+    margin-top: var(--space-lg);
 }
 
 .WebCertificateCourses {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+    align-items: stretch;
 
-    min-width: 0;
     width: 100%;
-    padding: 1.25rem;
+    min-width: 0;
+
+    padding: var(--space-lg);
 
     border: 1px solid var(--light-border);
     border-radius: 8px;
@@ -332,58 +361,154 @@ h2 {
 }
 
 
+/* =========================================
+   COURSE FILTER BUTTONS
+========================================= */
+
 .courses {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.75rem;
+
+    gap: var(--space-sm);
 
     width: 100%;
-    margin: 0 0 1rem;
+
+    margin: 0 0 var(--space-lg);
     padding: 0;
 
     list-style: none;
 }
 
 .courses li {
-    padding: 0.5rem 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.courses button {
+    min-width: 70px;
+
+    padding: 0.6rem 1.2rem;
 
     border: 1px solid var(--text-color);
     border-radius: 5px;
 
+    background-color: transparent;
     color: var(--text-color);
+
+    font-family: inherit;
+    font-weight: 700;
 
     cursor: pointer;
 
     transition:
         background-color 0.2s ease,
-        color 0.2s ease;
+        color 0.2s ease,
+        opacity 0.2s ease;
 }
 
-.courses li:hover {
+.courses button:hover {
     background-color: var(--text-color);
     color: var(--primary-color);
+    opacity: 1;
 }
+
+.courses button:focus-visible {
+    outline: 3px solid var(--h2-border-color);
+    outline-offset: 2px;
+}
+
+
+/* =========================================
+   COURSE LIST
+========================================= */
 
 .courseList {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem;
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: var(--space-md);
 
     width: 100%;
-    margin: 0;
-    padding-left: 0;
 
-    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
 }
 
 
-.courseList p {
+/* =========================================
+   COURSE CARDS
+========================================= */
+
+.course-card {
+    width: 100%;
+    min-width: 0;
+
+    margin: 0;
+    padding: var(--space-lg);
+
+    border: 2px solid #ccc;
+    border-radius: 8px;
+
+    background-color: #fff;
+    color: #222;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+
+    line-height: 1.5;
+}
+
+.course-card h3 {
+    margin: 0 0 var(--space-sm);
+
+    font-size: 1.1rem;
+}
+
+.course-card p {
+    margin: 0.35rem 0;
+}
+
+.course-card p:last-child {
     margin-bottom: 0;
-    overflow-wrap: break-word;
+}
+
+
+/* Completed course */
+
+.course-card.completed {
+    background-color: #d8f3dc;
+    border-color: #40916c;
+    color: #1b4332;
+}
+
+.course-card.completed::after {
+    content: " ✓ Completed";
+    display: block;
+
+    margin-top: var(--space-sm);
+
+    font-weight: bold;
+    color: #2d6a4f;
+}
+
+
+/* =========================================
+   TOTAL CREDITS
+========================================= */
+
+#totalCredits {
+    width: 100%;
+
+    margin: var(--space-lg) 0 0;
+
+    text-align: center;
+
+    overflow-wrap: anywhere;
 }
 
 
@@ -397,9 +522,12 @@ h2 {
     align-items: center;
     flex-wrap: wrap;
 
-    gap: 1rem;
+    gap: var(--space-md);
 
-    padding: 1rem;
+    width: 100%;
+
+    margin-top: var(--space-lg);
+    padding: var(--space-md);
 }
 
 .social-media a {
@@ -430,6 +558,7 @@ h2 {
 .social-media img {
     width: 28px;
     height: 28px;
+
     object-fit: contain;
 }
 
@@ -443,10 +572,12 @@ footer {
     flex-direction: column;
     align-items: center;
 
-    gap: 0.35rem;
+    gap: var(--space-xs);
 
-    margin-top: 1rem;
-    padding: 1.5rem 1rem;
+    width: 100%;
+
+    margin-top: 0;
+    padding: var(--space-lg) 1rem;
 
     border-top: 1px solid var(--light-border);
 
@@ -454,16 +585,19 @@ footer {
 }
 
 footer p {
+    max-width: 100%;
     margin: 0;
-    overflow-wrap: break-word;
-}
 
-#last-modified {
-    font-size: 0.85rem;
-}
-
-#last-modified-date {
     overflow-wrap: anywhere;
+}
+
+footer span {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+#lastModified {
+    font-size: 0.85rem;
 }
 
 
@@ -471,87 +605,43 @@ footer p {
    VERY SMALL SCREENS
 ========================================= */
 
-/* Default: multi-column layout on larger screens */
-.courseList {
-    display: grid;
+@media (max-width: 360px) {
 
-    /* Cards shrink and wrap automatically */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    main {
+        width: calc(100% - 1.5rem);
+    }
 
-    gap: 1rem;
+    header {
+        padding: 0.75rem;
+    }
 
-    width: 100%;
-    margin: 0;
-    padding: 0;
+    header span {
+        font-size: 1.1rem;
+    }
 
-    list-style: none;
+    .studentInfo > div,
+    .WebCertificateCourses {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .courses {
+        gap: 0.5rem;
+    }
+
+    .courses button {
+        min-width: 60px;
+        padding: 0.55rem 0.9rem;
+    }
+
+    .course-card {
+        padding: 1rem;
+    }
 }
-
-
-/* =========================================
-   COURSE CARDS
-========================================= */
-
-.course-card {
-    width: 100%;
-    min-width: 0;
-
-    padding: 1rem;
-
-    border: 2px solid #ccc;
-    border-radius: 8px;
-
-    background-color: #fff;
-    color: #222;
-
-    overflow-wrap: anywhere;
-    word-break: break-word;
-}
-
-.course-card h3 {
-    margin-top: 0;
-    margin-bottom: 0.75rem;
-}
-
-.course-card p {
-    margin-bottom: 0;
-}
-
-/* Completed course */
-
-.course-card.completed {
-    background-color: #d8f3dc;
-    border-color: #40916c;
-    color: #1b4332;
-}
-
-.course-card.completed::after {
-    content: " ✓ Completed";
-    display: block;
-
-    margin-top: 0.5rem;
-
-    font-weight: bold;
-    color: #2d6a4f;
-}
-
-.courses {
-    display: flex;
-    gap: 0.5rem;
-    padding: 0;
-    list-style: none;
-    flex-wrap: wrap;
-}
-
-.courses button {
-    padding: 0.6rem 1.2rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.courses button:hover {
-    opacity: 0.8;
-}
-
-
