@@ -1,0 +1,478 @@
+/* =========================================
+   CHAMBER DIRECTORY - BASE STYLES
+   Mobile First
+   ========================================= */
+
+/* ---------- CSS VARIABLES ---------- */
+:root {
+    --background: #121111;
+    --surface: #1e1c1c;
+    --surface-light: #292626;
+
+    --primary: #ffe97a;
+    --primary-dark: #d6a84f;
+
+    --text-light: #f5f5f5;
+    --text-muted: #c9c9c9;
+
+    --border: #5d512b;
+    --focus: #ffffff;
+
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+
+    --font-main: "Roboto", sans-serif;
+}
+
+/* ---------- RESET ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: var(--font-main);
+    background-color: var(--background);
+    color: var(--text-light);
+}
+
+body {
+    min-width: 320px;
+    background-color: var(--background);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+/* ---------- HEADER ---------- */
+header {
+    min-height: 75px;
+    background-color: var(--surface);
+    border-bottom: 2px solid var(--primary-dark);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1rem;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+}
+
+header span {
+    color: var(--primary);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+/* ---------- HAMBURGER ---------- */
+.hamburger {
+    width: 45px;
+    height: 40px;
+
+    position: relative;
+
+    border: 2px solid var(--primary);
+    border-radius: 5px;
+
+    background: transparent;
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+/* Hamburger middle line */
+.hamburger::before {
+    content: "";
+    position: absolute;
+
+    width: 23px;
+    height: 3px;
+
+    background-color: var(--primary);
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    box-shadow:
+        0 -8px 0 var(--primary),
+        0 8px 0 var(--primary);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Hamburger hover */
+.hamburger:hover {
+    background-color: var(--surface-light);
+    border-color: var(--primary);
+}
+
+/* Hamburger keyboard accessibility */
+.hamburger:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+}
+
+/* Hamburger pressed */
+.hamburger:active {
+    transform: scale(0.95);
+}
+
+/* ---------- NAVIGATION ---------- */
+nav {
+    background-color: var(--surface);
+}
+
+nav h1 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+nav ul {
+    display: none;
+    list-style: none;
+    flex-direction: column;
+}
+
+nav ul.show {
+    display: flex;
+}
+
+nav li {
+    width: 100%;
+}
+
+/* ---------- NAV LINKS ---------- */
+nav a {
+    display: block;
+
+    padding: 0.9rem 1rem;
+
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+
+    border-top: 1px solid #333;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+/* Hover */
+nav a:hover {
+    background-color: var(--surface-light);
+    color: var(--primary);
+    padding-left: 1.4rem;
+}
+
+/* Keyboard focus */
+nav a:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: -3px;
+}
+
+/* ---------- WAYFINDER ---------- */
+/* Current page */
+nav li.active a,
+nav a[aria-current="page"] {
+    background-color: rgba(255, 233, 122, 0.14);
+    color: var(--primary);
+
+    border-left: 5px solid var(--primary);
+    font-weight: 700;
+}
+
+/* Wayfinder hover */
+nav li.active a:hover {
+    background-color: rgba(255, 233, 122, 0.22);
+}
+
+/* ---------- MAIN ---------- */
+main {
+    width: 94%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding: 1.5rem 0 3rem;
+}
+
+main::before {
+    content: "Local Businesses & Services";
+    display: block;
+
+    color: var(--text-muted);
+    font-size: 0.95rem;
+
+    margin-bottom: 1rem;
+}
+
+/* ---------- VIEW BUTTONS ---------- */
+#grid-view,
+#list-view {
+    border: 2px solid var(--primary);
+    border-radius: 6px;
+
+    background-color: transparent;
+    color: var(--primary);
+
+    padding: 0.65rem 1rem;
+    margin: 0 0.4rem 1.2rem 0;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Button hover */
+#grid-view:hover,
+#list-view:hover {
+    background-color: var(--primary);
+    color: var(--background);
+    box-shadow: 0 0 10px rgba(255, 233, 122, 0.25);
+}
+
+/* Button keyboard focus */
+#grid-view:focus-visible,
+#list-view:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+}
+
+/* Button click */
+#grid-view:active,
+#list-view:active {
+    transform: scale(0.96);
+}
+
+/* ---------- DIRECTORY CONTAINER ---------- */
+#directory-container {
+    display: grid;
+    gap: 1rem;
+}
+
+/* ---------- DIRECTORY CARD ---------- */
+.member-card {
+    background-color: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    padding: 1.2rem;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary);
+    background-color: var(--surface-light);
+}
+
+.member-card:focus-within {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* ---------- MEMBER IMAGE ---------- */
+.member-card img {
+    width: 100%;
+    max-width: 180px;
+    height: 120px;
+
+    object-fit: contain;
+
+    margin: 0 auto 1rem;
+
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+/* ---------- CARD CONTENT ---------- */
+.member-card h2 {
+    color: var(--primary);
+    font-size: 1.25rem;
+    margin-bottom: 0.4rem;
+}
+
+.member-card p {
+    color: var(--text-light);
+    margin-bottom: 0.35rem;
+}
+
+.member-card .category {
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+.member-card .description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 0.6rem;
+}
+
+/* ---------- CARD LINK ---------- */
+.member-card a {
+    display: inline-block;
+
+    margin-top: 0.8rem;
+
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.member-card a:hover {
+    color: var(--text-light);
+}
+
+.member-card a:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+}
+
+/* ---------- MEMBERSHIP LEVEL ---------- */
+.membership {
+    display: inline-block;
+
+    margin-top: 0.6rem;
+    padding: 0.25rem 0.6rem;
+
+    border: 1px solid var(--primary-dark);
+    border-radius: 20px;
+
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* ---------- LIST VIEW ---------- */
+#directory-container.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#directory-container.list-view .member-card {
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    align-items: center;
+
+    padding: 0.8rem;
+}
+
+#directory-container.list-view .member-card img {
+    width: 85px;
+    height: 70px;
+
+    margin: 0;
+}
+
+#directory-container.list-view .member-card h2 {
+    font-size: 1rem;
+}
+
+#directory-container.list-view .member-card p {
+    font-size: 0.85rem;
+}
+
+#directory-container.list-view .description,
+#directory-container.list-view .membership {
+    display: none;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background-color: var(--surface);
+
+    border-top: 2px solid var(--primary-dark);
+
+    padding: 2rem 1rem;
+
+    text-align: center;
+}
+
+footer h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+footer p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    list-style: none;
+
+    margin: 1rem 0;
+}
+
+footer li {
+    transition: transform 0.2s ease;
+}
+
+footer li:hover {
+    transform: translateY(-3px);
+}
+
+footer img {
+    width: 35px;
+    height: 35px;
+}
+
+#last-modified {
+    color: var(--primary);
+    margin-left: 0.3rem;
+}
+
+/* ---------- RESPONSIVE IMAGE ---------- */
+@media (max-width: 500px) {
+    .member-card img {
+        max-width: 130px;
+        height: 90px;
+    }
+}

@@ -1,0 +1,166 @@
+/* =========================================
+   CHAMBER DIRECTORY - LARGE SCREEN STYLES
+   ========================================= */
+
+@media screen and (min-width: 768px) {
+
+    /* ---------- HEADER ---------- */
+
+    header {
+        padding: 1rem 3rem;
+    }
+
+    header span {
+        font-size: 1.5rem;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    /* ---------- NAVIGATION ---------- */
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 3rem;
+    }
+
+    nav h1 {
+        padding: 1rem 0;
+    }
+
+    nav ul {
+        display: flex;
+
+        flex-direction: row;
+
+        align-items: stretch;
+        justify-content: flex-end;
+
+        gap: 0.3rem;
+    }
+
+    nav li {
+        width: auto;
+    }
+
+    nav a {
+        border-top: none;
+
+        padding: 1rem 1.2rem;
+
+        transition:
+            background-color 0.2s ease,
+            color 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    nav a:hover {
+        padding-left: 1.2rem;
+        transform: translateY(-2px);
+    }
+
+    /* Desktop wayfinder */
+    nav li.active a,
+    nav a[aria-current="page"] {
+        border-left: none;
+        border-bottom: 4px solid var(--primary);
+
+        background-color: rgba(255, 233, 122, 0.12);
+    }
+
+    /* ---------- MAIN ---------- */
+
+    main {
+        width: 90%;
+        padding-top: 2rem;
+    }
+
+    /* ---------- GRID VIEW ---------- */
+
+    #directory-container.grid-view {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* ---------- LIST VIEW ---------- */
+
+    #directory-container.list-view .member-card {
+        grid-template-columns: 140px 1fr 180px;
+
+        min-height: 110px;
+
+        padding: 1rem 1.5rem;
+    }
+
+    #directory-container.list-view .member-card img {
+        width: 110px;
+        height: 80px;
+    }
+
+    #directory-container.list-view .member-card .description {
+        display: block;
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    #directory-container.list-view .member-card .membership {
+        display: inline-block;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        padding: 2.5rem 3rem;
+    }
+}
+
+
+/* =========================================
+   EXTRA LARGE SCREENS
+   ========================================= */
+
+@media screen and (min-width: 1000px) {
+
+    header {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    nav {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    main {
+        width: 90%;
+        max-width: 1400px;
+    }
+
+    #directory-container.grid-view {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .member-card {
+        padding: 1.5rem;
+    }
+
+    .member-card img {
+        height: 140px;
+    }
+}
+
+
+/* =========================================
+   VERY LARGE SCREENS
+   ========================================= */
+
+@media screen and (min-width: 1400px) {
+
+    #directory-container.grid-view {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
