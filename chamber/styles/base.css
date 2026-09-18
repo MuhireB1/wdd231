@@ -420,6 +420,8 @@ main::before {
 }
 
 /* ---------- FOOTER ---------- */
+/* ---------- FOOTER ---------- */
+
 footer {
     background-color: var(--surface);
 
@@ -430,20 +432,31 @@ footer {
     text-align: center;
 }
 
+/* Footer sections */
+footer section {
+    margin-bottom: 1.5rem;
+}
+
 footer h3 {
     color: var(--primary);
-    margin-bottom: 0.5rem;
+
+    margin-bottom: 0.6rem;
 }
 
 footer p {
     color: var(--text-muted);
-    margin-bottom: 1rem;
+
+    margin-bottom: 0.7rem;
 }
 
-footer ul {
+/* ---------- SOCIAL LINKS ---------- */
+
+.social-links ul {
     display: flex;
+
     justify-content: center;
     align-items: center;
+
     gap: 1rem;
 
     list-style: none;
@@ -451,17 +464,40 @@ footer ul {
     margin: 1rem 0;
 }
 
-footer li {
+.social-links li {
     transition: transform 0.2s ease;
 }
 
-footer li:hover {
+.social-links li:hover {
     transform: translateY(-3px);
 }
 
-footer img {
+.social-links img {
     width: 35px;
     height: 35px;
+}
+
+.social-links a {
+    display: inline-block;
+}
+
+.social-links a:hover {
+    opacity: 0.8;
+}
+
+.social-links a:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+}
+
+/* ---------- FOOTER BOTTOM ---------- */
+
+.footer-bottom {
+    color: var(--text-muted);
+}
+
+.footer-bottom p {
+    margin-bottom: 0.7rem;
 }
 
 #last-modified {

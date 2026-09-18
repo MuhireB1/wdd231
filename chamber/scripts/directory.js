@@ -4,103 +4,21 @@
 
 // ---------- BUSINESS DATA ----------
 
-const members = [
-    {
-        name: "Kigali Business Center",
-        category: "Business Services",
-        address: "KN 5 Road, Kigali, Rwanda",
-        phone: "+250 788 123 456",
-        website: "https://example.com",
-        image: "images/business1.webp",
-        membership: "Gold Member",
-        description:
-            "Business consulting and professional support services for local enterprises."
-    },
+const directoryData = document.querySelector("#directory-container");
+async function getDirectoryData() {
+    try {
+        const response = await fetch("data/member.json");
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        displayMembers(data);
+    } catch (error) {
+        console.error("Error fetching directory data:", error);
+        directoryData.innerHTML = "<p>Sorry, we are unable to load the directory at this time. Please try again later.</p>";
 
-    {
-        name: "Rwanda Tech Solutions",
-        category: "Technology",
-        address: "KG 7 Avenue, Kigali, Rwanda",
-        phone: "+250 789 234 567",
-        website: "https://example.com",
-        image: "images/business2.webp",
-        membership: "Silver Member",
-        description:
-            "Technology solutions, digital services, software development and IT support."
-    },
-
-    {
-        name: "Kigali Fresh Foods",
-        category: "Food & Agriculture",
-        address: "KN 2 Street, Kigali, Rwanda",
-        phone: "+250 780 345 678",
-        website: "https://example.com",
-        image: "images/business3.webp",
-        membership: "Gold Member",
-        description:
-            "Fresh local produce, food products and agricultural supplies."
-    },
-
-    {
-        name: "Rwanda Construction Group",
-        category: "Construction",
-        address: "KG 11 Avenue, Kigali, Rwanda",
-        phone: "+250 781 456 789",
-        website: "https://example.com",
-        image: "images/business4.webp",
-        membership: "Silver Member",
-        description:
-            "Construction, renovation and infrastructure development services."
-    },
-
-    {
-        name: "Kigali Creative Studio",
-        category: "Media & Design",
-        address: "KN 10 Road, Kigali, Rwanda",
-        phone: "+250 782 567 890",
-        website: "https://example.com",
-        image: "images/business5.webp",
-        membership: "Bronze Member",
-        description:
-            "Graphic design, photography, branding and digital media services."
-    },
-
-    {
-        name: "Rwanda Financial Services",
-        category: "Finance",
-        address: "KN 3 Avenue, Kigali, Rwanda",
-        phone: "+250 783 678 901",
-        website: "https://example.com",
-        image: "images/business6.webp",
-        membership: "Gold Member",
-        description:
-            "Financial planning, accounting and business advisory services."
-    },
-
-    {
-        name: "Kigali Travel & Tours",
-        category: "Tourism",
-        address: "KG 9 Street, Kigali, Rwanda",
-        phone: "+250 784 789 012",
-        website: "https://example.com",
-        image: "images/business7.webp",
-        membership: "Silver Member",
-        description:
-            "Travel planning, tour packages and tourism services across Rwanda."
-    },
-
-    {
-        name: "Rwanda Health Supplies",
-        category: "Healthcare",
-        address: "KN 8 Road, Kigali, Rwanda",
-        phone: "+250 785 890 123",
-        website: "https://example.com",
-        image: "images/business8.webp",
-        membership: "Bronze Member",
-        description:
-            "Healthcare supplies and professional health-related services."
     }
-];
+}
 
 
 // ---------- DIRECTORY CONTAINER ----------
@@ -171,7 +89,6 @@ function displayMembers(data) {
         directoryContainer.appendChild(card);
     });
 }
-
 
 // ---------- GRID VIEW ----------
 
@@ -261,7 +178,12 @@ if (lastModified) {
         document.lastModified;
 }
 
+// Display the current copyright year
+const copyrightYear = document.querySelector("#copyright-year");
+copyrightYear.textContent = new Date().getFullYear();
+
+
 
 // ---------- INITIAL DIRECTORY ----------
 
-displayMembers(members);
+getDirectoryData();
