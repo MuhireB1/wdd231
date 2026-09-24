@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the Chamber Directory for local businesses and services.">
-    <meta name="keywords" content="Chamber Directory, local businesses, services, directory">
+    <meta name="description" content="Discover local businesses, services, events, and opportunities through the Kigali Chamber of Commerce. Connect with businesses and explore resources that support Rwanda's growing business community.">
+    <meta name="keywords" content="Kigali Chamber of Commerce, Rwanda businesses, local businesses, business directory, chamber members, business services, Kigali business community">
     <meta name="author" content="Muhire Bienvenue">
     <link rel="icon" href="images/favicon.ico">
-    <title>Chamber Directory - Local Businesses and Services - kigali-Rwanda</title>
+    <title>Kigali Chamber of Commerce | Business & Community</title>
 
-    <meta property="og:title" content="Chamber Directory">
-    <meta property="og:description" content="Explore the Chamber Directory for local businesses and services.">
+    <meta property="og:title" content="Kigali Chamber of Commerce | Business and Community">
+    <meta property="og:description" content="Connect with local businesses, discover opportunities, and explore resources supporting Kigali's business community.">
     <meta property="og:image" content="https://example.com/images/chamber-directory.jpg">
     <meta property="og:url" content="https://example.com/directory">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="Chamber Directory">
-    <meta property="twitter:description" content="Explore the Chamber Directory for local businesses and services.">
+    <meta property="twitter:description" content="Connect with local businesses, discover opportunities, and explore resources supporting Kigali's business community.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/large.css">
     <link rel="stylesheet" href="styles/normalize.css">
-    <script src="scripts/directory.js" defer></script>
+    <script type="module" src="scripts/main.mjs"></script>
 </head>
 <body>
     <header>
@@ -32,7 +32,6 @@
         <span>CHAMBER OF COMMERCE</span>
         <button
             id="nav-button"
-            type="button"
             class="hamburger"
             aria-label="Open navigation menu"
             aria-expanded="false"
@@ -40,56 +39,85 @@
         </button>
     </header>
     <nav>
-        <h1>Directory</h1>
+        <h1>Home</h1>
 
         <ul id="primary-navigation">
-            <li><a href="index.html">Home</a></li>
-            <li class="active">
-                <a href="directory.html" aria-current="page">Directory</a>
-            </li>
+            <li class="active" aria-current="page"><a href="home.html">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
             <li><a href="join.html">Join</a></li>
             <li><a href="discover.html">Discover</a></li>
         </ul>
     </nav>
     <main>
-        <button
-            id="grid-view"
-            type="button"
-            aria-label="Switch to grid view"
-            aria-pressed="true">
-            Grid View
-        </button>
+        <section class="hero-image">
+        <picture>
+            <source srcset="images/hero-small.webp" media="(max-width: 600px)">
+            <source srcset="images/hero-medium.webp" media="(max-width: 1024px)">
+            <img src="images/hero-large.webp" alt="Kigali Center of Business" height="900" width="1600" fetchpriority="high">
+        </picture>
+        <div class="hero-content">
+            <h2>Connect. Grow. Prosper.</h2>
 
-        <button
-            id="list-view"
-            type="button"
-            aria-label="Switch to list view"
-            aria-pressed="false">
-            List View
-        </button>
-        <section id="directory-container" class="grid-view">
-            <h2>Directory</h2>
-            <!-- Directory entries will be dynamically inserted here -->
-        </section>
+            <p>
+                Supporting businesses and strengthening
+                Kigali's business community.
+            </p>
+
+            <a href="join.html" class="join-button">
+                Join the Chamber
+            </a>
+        </div>
+
+    </section>
+
+        <!-- CURRENT EVENTS -->
+    <section id="current-events" class="content-card">
+        <h2>Current Events</h2>
+
+        <div class="events-container">
+            <!-- Events will be added here -->
+        </div>
+    </section>
+
+
+    <!-- WEATHER -->
+    <section id="weather" class="content-card">
+        <h2>Weather</h2>
+    </section>
+
+
+    <!-- BUSINESS SPOTLIGHTS -->
+    <section id="spotlights" class="content-card">
+        <h2>Business Spotlights</h2>
+
+        <!-- JavaScript will insert spotlight cards here -->
+    </section>
     </main>
     <footer>
-
     <!-- Contact Information -->
     <section class="contact-info">
-        <h2>Contact Information</h2>
+        <h3>Contact Information</h3>
 
         <p>
             123 Main Street<br>
-            Kigali, Rwanda<br>
-            Email: info@chamber.org<br>
-            Phone: +250 123 456 789
+            Kigali, Rwanda
+        </p>
+
+        <p>
+            Email:
+            <a href="mailto:info@chamber.org">info@chamber.org</a>
+        </p>
+
+        <p>
+            Phone:
+            <a href="tel:+250123456789">+250 123 456 789</a>
         </p>
     </section>
 
 
     <!-- Social Links -->
     <section class="social-links">
-        <h2>Follow Us</h2>
+        <h3>Follow Us</h3>
 
         <ul>
             <li>
@@ -152,5 +180,3 @@
     </section>
 
 </footer>
-</body>
-</html>

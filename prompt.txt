@@ -1,0 +1,3232 @@
+Im gonna share all. <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Explore the Chamber Directory for local businesses and services.">
+
+    <meta name="keywords" content="Chamber Directory, local businesses, services, directory">
+
+    <meta name="author" content="Muhire Bienvenue">
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>Chamber Directory - Local Businesses and Services - kigali-Rwanda</title>
+
+
+
+    <meta property="og:title" content="Chamber Directory">
+
+    <meta property="og:description" content="Explore the Chamber Directory for local businesses and services.">
+
+    <meta property="og:image" content="https://example.com/images/chamber-directory.jpg">
+
+    <meta property="og:url" content="https://example.com/directory">
+
+    <meta property="twitter:card" content="summary_large_image">
+
+    <meta property="twitter:title" content="Chamber Directory">
+
+    <meta property="twitter:description" content="Explore the Chamber Directory for local businesses and services.">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="styles/base.css">
+
+    <link rel="stylesheet" href="styles/large.css">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+
+    <script src="scripts/directory.mjs" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <img src="images/logo.svg" alt="Chamber Logo" class="logo">
+
+        <span>CHAMBER OF COMMERCE</span>
+
+        <button
+
+            id="nav-button"
+
+            class="hamburger"
+
+            aria-label="Open navigation menu"
+
+            aria-expanded="false"
+
+            aria-controls="primary-navigation">
+
+        </button>
+
+    </header>
+
+    <nav>
+
+        <h1>Directory</h1>
+
+
+
+        <ul id="primary-navigation">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li class="active">
+
+                <a href="directory.html" aria-current="page">Directory</a>
+
+            </li>
+
+            <li><a href="join.html">Join</a></li>
+
+            <li><a href="discover.html">Discover</a></li>
+
+        </ul>
+
+    </nav>
+
+    <main>
+
+        <button
+
+            id="grid-view"
+
+            aria-label="Switch to grid view"
+
+            aria-pressed="true">
+
+            Grid View
+
+        </button>
+
+
+
+        <button
+
+            id="list-view"
+
+            aria-label="Switch to list view"
+
+            aria-pressed="false">
+
+            List View
+
+        </button>
+
+        <section id="directory-container" class="grid-view">
+
+            <h2>Directory</h2>
+
+            <!-- Directory entries will be dynamically inserted here -->
+
+        </section>
+
+    </main>
+
+    <footer>
+
+
+
+    <!-- Contact Information -->
+
+    <section class="contact-info">
+
+        <h2>Contact Information</h2>
+
+
+
+        <p>
+
+            123 Main Street<br>
+
+            Kigali, Rwanda<br>
+
+            Email: info@chamber.org<br>
+
+            Phone: +250 123 456 789
+
+        </p>
+
+    </section>
+
+
+
+
+
+    <!-- Social Links -->
+
+    <section class="social-links">
+
+        <h2>Follow Us</h2>
+
+
+
+        <ul>
+
+            <li>
+
+                <a
+
+                    href="https://www.linkedin.com/company/chamber"
+
+                    target="_blank"
+
+                    rel="noopener noreferrer"
+
+                    aria-label="Follow us on LinkedIn"
+
+                >
+
+                    <img
+
+                        src="images/linkedin.svg"
+
+                        alt="LinkedIn"
+
+                    >
+
+                </a>
+
+            </li>
+
+
+
+            <li>
+
+                <a
+
+                    href="https://github.com/chamber"
+
+                    target="_blank"
+
+                    rel="noopener noreferrer"
+
+                    aria-label="Follow us on GitHub"
+
+                >
+
+                    <img
+
+                        src="images/github.svg"
+
+                        alt="GitHub"
+
+                    >
+
+                </a>
+
+            </li>
+
+
+
+            <li>
+
+                <a
+
+                    href="https://twitter.com/chamber" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    aria-label="Follow us on Twitter" 
+                > 
+                    <img 
+                        src="images/twitter.svg" 
+                        alt="Twitter" 
+                    > 
+                </a> 
+            </li> 
+        </ul> 
+    </section> 
+ 
+ 
+    <!-- Footer Information --> 
+    <section class="footer-bottom"> 
+ 
+        <p> 
+            &copy; <span id="copyright-year"></span> 🌺 MUHIRE BIENVENUE 🌺 WDD 231 
+        </p> 
+ 
+        <span> 
+            Last Modified: 
+            <span id="last-modified"></span> 
+        </span> 
+ 
+    </section> 
+ 
+</footer> 
+</body> 
+</html>.  <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Discover local businesses, services, events, and opportunities through the Kigali Chamber of Commerce. Connect with businesses and explore resources that support Rwanda's growing business community.">
+
+    <meta name="keywords" content="Kigali Chamber of Commerce, Rwanda businesses, local businesses, business directory, chamber members, business services, Kigali business community">
+
+    <meta name="author" content="Muhire Bienvenue">
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>Kigali Chamber of Commerce | Business & Community</title>
+
+
+
+    <meta property="og:title" content="Kigali Chamber of Commerce | Business and Community">
+
+    <meta property="og:description" content="Connect with local businesses, discover opportunities, and explore resources supporting Kigali's business community.">
+
+    <meta property="og:image" content="https://example.com/images/chamber-directory.jpg">
+
+    <meta property="og:url" content="https://example.com/directory">
+
+    <meta property="twitter:card" content="summary_large_image">
+
+    <meta property="twitter:title" content="Chamber Directory">
+
+    <meta property="twitter:description" content="Connect with local businesses, discover opportunities, and explore resources supporting Kigali's business community.">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="styles/base.css">
+
+    <link rel="stylesheet" href="styles/large.css">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+
+    <script type="module" src="scripts/main.mjs"></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <img src="images/logo.svg" alt="Chamber Logo" class="logo">
+
+        <span>CHAMBER OF COMMERCE</span>
+
+        <button
+
+            id="nav-button"
+
+            class="hamburger"
+
+            aria-label="Open navigation menu"
+
+            aria-expanded="false"
+
+            aria-controls="primary-navigation">
+
+        </button>
+
+    </header>
+
+    <nav>
+
+        <h1>Home</h1>
+
+
+
+        <ul id="primary-navigation">
+
+            <li class="active" aria-current="page"><a href="home.html">Home</a></li>
+
+            <li><a href="directory.html">Directory</a></li>
+
+            <li><a href="join.html">Join</a></li>
+
+            <li><a href="discover.html">Discover</a></li>
+
+        </ul>
+
+    </nav>
+
+    <main>
+
+        <section class="hero-image">
+
+        <picture>
+
+            <source srcset="images/hero-small.webp" media="(max-width: 600px)">
+
+            <source srcset="images/hero-medium.webp" media="(max-width: 1024px)">
+
+            <img src="images/hero-large.webp" alt="Kigali Center of Business" height="900" width="1600" fetchpriority="high">
+
+        </picture>
+
+        <div class="hero-content">
+
+            <h2>Connect. Grow. Prosper.</h2>
+
+
+
+            <p>
+
+                Supporting businesses and strengthening
+
+                Kigali's business community.
+
+            </p>
+
+
+
+            <a href="join.html" class="join-button">
+
+                Join the Chamber
+
+            </a>
+
+        </div>
+
+
+
+    </section>
+
+
+
+        <!-- CURRENT EVENTS -->
+
+    <section id="current-events" class="content-card">
+
+        <h2>Current Events</h2>
+
+
+
+        <div class="events-container">
+
+            <!-- Events will be added here -->
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- WEATHER -->
+
+    <section id="weather" class="content-card">
+
+        <h2>Weather</h2>
+
+    </section>
+
+
+
+
+
+    <!-- BUSINESS SPOTLIGHTS -->
+
+    <section id="spotlights" class="content-card">
+
+        <h2>Business Spotlights</h2>
+
+
+
+        <!-- JavaScript will insert spotlight cards here -->
+
+    </section>
+
+    </main>
+
+    <footer>
+
+    <!-- Contact Information -->
+
+    <section class="contact-info">
+
+        <h3>Contact Information</h3>
+
+
+
+        <p>
+
+            123 Main Street<br>
+
+            Kigali, Rwanda
+
+        </p>
+
+
+
+        <p>
+
+            Email:
+
+            <a href="mailto:info@chamber.org">info@chamber.org</a>
+
+        </p>
+
+
+
+        <p>
+
+            Phone:
+
+            <a href="tel:+250123456789">+250 123 456 789</a>
+
+        </p>
+
+    </section>
+
+
+
+
+
+    <!-- Social Links -->
+
+    <section class="social-links">
+
+        <h3>Follow Us</h3>
+
+
+
+        <ul>
+
+            <li>
+
+                <a
+
+                    href="https://www.linkedin.com/company/chamber"
+
+                    target="_blank"
+
+                    rel="noopener noreferrer"
+
+                    aria-label="Follow us on LinkedIn"
+
+                >
+
+                    <img
+
+                        src="images/linkedin.svg"
+
+                        alt="LinkedIn"
+
+                    >
+
+                </a>
+
+            </li>
+
+
+
+            <li>
+
+                <a
+
+                    href="https://github.com/chamber"
+
+                    target="_blank"
+
+                    rel="noopener noreferrer"
+
+                    aria-label="Follow us on GitHub"
+
+                >
+
+                    <img
+
+                        src="images/github.svg"
+
+                        alt="GitHub"
+
+                    >
+
+                </a>
+
+            </li>
+
+
+
+            <li>
+
+                <a
+
+                    href="https://twitter.com/chamber" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    aria-label="Follow us on Twitter" 
+                > 
+                    <img 
+                        src="images/twitter.svg" 
+                        alt="Twitter" 
+                    > 
+                </a> 
+            </li> 
+        </ul> 
+    </section> 
+ 
+ 
+    <!-- Footer Information --> 
+    <section class="footer-bottom"> 
+ 
+        <p> 
+            &copy; <span id="copyright-year"></span> 🌺 MUHIRE BIENVENUE 🌺 WDD 231 
+        </p> 
+ 
+        <span> 
+            Last Modified: 
+            <span id="last-modified"></span> 
+        </span> 
+ 
+    </section> 
+ 
+</footer>. /* ========================================= 
+   CHAMBER DIRECTORY - BASE STYLES 
+   Mobile First 
+   ========================================= */ 
+ 
+/* ---------- CSS VARIABLES ---------- */ 
+:root { 
+    --background: #121111; 
+    --surface: #1e1c1c; 
+    --surface-light: #292626; 
+ 
+    --primary: #ffe97a; 
+    --primary-dark: #d6a84f; 
+ 
+    --text-light: #f5f5f5; 
+    --text-muted: #c9c9c9; 
+ 
+    --border: #5d512b; 
+    --focus: #ffffff; 
+ 
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.45); 
+ 
+    --font-main: "Roboto", sans-serif; 
+} 
+ 
+/* ---------- RESET ---------- */ 
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+} 
+ 
+html { 
+    font-family: var(--font-main); 
+    background-color: var(--background); 
+    color: var(--text-light); 
+} 
+ 
+body { 
+    min-width: 320px; 
+    background-color: var(--background); 
+    color: var(--text-light); 
+    line-height: 1.6; 
+} 
+ 
+img { 
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+} 
+ 
+button, 
+a { 
+    font-family: inherit; 
+} 
+ 
+/* ---------- HEADER ---------- */ 
+header { 
+    min-height: 75px; 
+    background-color: var(--surface); 
+    border-bottom: 2px solid var(--primary-dark); 
+ 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+ 
+    padding: 1rem; 
+} 
+ 
+.logo { 
+    width: 45px; 
+    height: 45px; 
+} 
+ 
+header span { 
+    color: var(--primary); 
+    font-size: 1.25rem; 
+    font-weight: 700; 
+    margin-left: auto; 
+    margin-right: 1rem; 
+} 
+ 
+/* ---------- HAMBURGER ---------- */ 
+.hamburger { 
+    width: 45px; 
+    height: 40px; 
+ 
+    position: relative; 
+ 
+    border: 2px solid var(--primary); 
+    border-radius: 5px; 
+ 
+    background: transparent; 
+    cursor: pointer; 
+ 
+    transition: 
+        background-color 0.2s ease, 
+        border-color 0.2s ease; 
+} 
+ 
+/* Hamburger middle line */ 
+.hamburger::before { 
+    content: ""; 
+    position: absolute; 
+ 
+    width: 23px; 
+    height: 3px; 
+ 
+    background-color: var(--primary); 
+ 
+    left: 50%; 
+    top: 50%; 
+ 
+    transform: translate(-50%, -50%); 
+ 
+    box-shadow: 
+        0 -8px 0 var(--primary), 
+        0 8px 0 var(--primary); 
+ 
+    transition: 
+        transform 0.2s ease, 
+        box-shadow 0.2s ease; 
+} 
+ 
+/* Hamburger hover */ 
+.hamburger:hover { 
+    background-color: var(--surface-light); 
+    border-color: var(--primary); 
+} 
+ 
+/* Hamburger keyboard accessibility */ 
+.hamburger:focus-visible { 
+    outline: 3px solid var(--focus); 
+    outline-offset: 3px; 
+} 
+ 
+/* Hamburger pressed */ 
+.hamburger:active { 
+    transform: scale(0.95); 
+} 
+ 
+/* ---------- NAVIGATION ---------- */ 
+nav { 
+    background-color: var(--surface); 
+} 
+ 
+nav h1 { 
+    color: var(--primary); 
+    font-size: 1.5rem; 
+    text-align: center; 
+    padding: 1rem; 
+} 
+ 
+nav ul { 
+    display: none; 
+    list-style: none; 
+    flex-direction: column; 
+} 
+ 
+nav ul.show { 
+    display: flex; 
+} 
+ 
+nav li { 
+    width: 100%; 
+} 
+ 
+/* ---------- NAV LINKS ---------- */ 
+nav a { 
+    display: block; 
+ 
+    padding: 0.9rem 1rem; 
+ 
+    color: var(--text-light); 
+    text-decoration: none; 
+    font-weight: 600; 
+ 
+    border-top: 1px solid #333; 
+ 
+    transition: 
+        background-color 0.2s ease, 
+        color 0.2s ease, 
+        padding-left 0.2s ease; 
+} 
+ 
+/* Hover */ 
+nav a:hover { 
+    background-color: var(--surface-light); 
+    color: var(--primary); 
+    padding-left: 1.4rem; 
+} 
+ 
+/* Keyboard focus */ 
+nav a:focus-visible { 
+    outline: 3px solid var(--focus); 
+    outline-offset: -3px; 
+} 
+ 
+/* ---------- WAYFINDER ---------- */ 
+/* Current page */ 
+nav li.active a, 
+nav a[aria-current="page"] { 
+    background-color: rgba(255, 233, 122, 0.14); 
+    color: var(--primary); 
+ 
+    border-left: 5px solid var(--primary); 
+    font-weight: 700; 
+} 
+ 
+/* Wayfinder hover */ 
+nav li.active a:hover { 
+    background-color: rgba(255, 233, 122, 0.22); 
+} 
+ 
+/* ---------- MAIN ---------- */ 
+main { 
+    width: 94%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+ 
+    padding: 1.5rem 0 3rem; 
+} 
+ 
+main::before { 
+    content: "Local Businesses & Services"; 
+    display: block; 
+ 
+    color: var(--text-muted); 
+    font-size: 0.95rem; 
+ 
+    margin-bottom: 1rem; 
+} 
+ 
+/* ---------- VIEW BUTTONS ---------- */ 
+#grid-view, 
+#list-view { 
+    border: 2px solid var(--primary); 
+    border-radius: 6px; 
+ 
+    background-color: transparent; 
+    color: var(--primary); 
+ 
+    padding: 0.65rem 1rem; 
+    margin: 0 0.4rem 1.2rem 0; 
+ 
+    font-weight: 700; 
+ 
+    cursor: pointer; 
+ 
+    transition: 
+        background-color 0.2s ease, 
+        color 0.2s ease, 
+        transform 0.2s ease, 
+        box-shadow 0.2s ease; 
+} 
+ 
+/* Button hover */ 
+#grid-view:hover, 
+#list-view:hover { 
+    background-color: var(--primary); 
+    color: var(--background); 
+    box-shadow: 0 0 10px rgba(255, 233, 122, 0.25); 
+} 
+ 
+/* Button keyboard focus */ 
+#grid-view:focus-visible, 
+#list-view:focus-visible { 
+    outline: 3px solid var(--focus); 
+    outline-offset: 3px; 
+} 
+ 
+/* Button click */ 
+#grid-view:active, 
+#list-view:active { 
+    transform: scale(0.96); 
+} 
+ 
+/* ---------- DIRECTORY CONTAINER ---------- */ 
+#directory-container { 
+    display: grid; 
+    gap: 1rem; 
+} 
+ 
+/* ---------- DIRECTORY CARD ---------- */ 
+.member-card { 
+    background-color: var(--surface); 
+ 
+    border: 1px solid var(--border); 
+    border-radius: 8px; 
+ 
+    padding: 1.2rem; 
+ 
+    box-shadow: var(--shadow); 
+ 
+    transition: 
+        transform 0.2s ease, 
+        border-color 0.2s ease, 
+        background-color 0.2s ease; 
+} 
+ 
+.member-card:hover { 
+    transform: translateY(-3px); 
+    border-color: var(--primary); 
+    background-color: var(--surface-light); 
+} 
+ 
+.member-card:focus-within { 
+    outline: 2px solid var(--primary); 
+    outline-offset: 2px; 
+} 
+ 
+/* ---------- MEMBER IMAGE ---------- */ 
+.member-card img { 
+    width: 100%; 
+    max-width: 180px; 
+    height: 120px; 
+ 
+    object-fit: contain; 
+ 
+    margin: 0 auto 1rem; 
+ 
+    background-color: #ffffff; 
+    border-radius: 5px; 
+    padding: 0.5rem; 
+} 
+ 
+/* ---------- CARD CONTENT ---------- */ 
+.member-card h2 { 
+    color: var(--primary); 
+    font-size: 1.25rem; 
+    margin-bottom: 0.4rem; 
+} 
+ 
+.member-card p { 
+    color: var(--text-light); 
+    margin-bottom: 0.35rem; 
+} 
+ 
+.member-card .category { 
+    color: var(--primary-dark); 
+    font-weight: 700; 
+} 
+ 
+.member-card .description { 
+    color: var(--text-muted); 
+    font-size: 0.95rem; 
+    margin-top: 0.6rem; 
+} 
+ 
+/* ---------- CARD LINK ---------- */ 
+.member-card a { 
+    display: inline-block; 
+ 
+    margin-top: 0.8rem; 
+ 
+    color: var(--primary); 
+    font-weight: 700; 
+    text-decoration: underline; 
+} 
+ 
+.member-card a:hover { 
+    color: var(--text-light); 
+} 
+ 
+.member-card a:focus-visible { 
+    outline: 3px solid var(--focus); 
+    outline-offset: 3px; 
+} 
+ 
+/* ---------- MEMBERSHIP LEVEL ---------- */ 
+.membership { 
+    display: inline-block; 
+ 
+    margin-top: 0.6rem; 
+    padding: 0.25rem 0.6rem; 
+ 
+    border: 1px solid var(--primary-dark); 
+    border-radius: 20px; 
+ 
+    color: var(--primary); 
+    font-size: 0.8rem; 
+    font-weight: 700; 
+} 
+ 
+/* ---------- LIST VIEW ---------- */ 
+#directory-container.list-view { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.5rem; 
+} 
+ 
+#directory-container.list-view .member-card { 
+    display: grid; 
+ 
+    grid-template-columns: 100px 1fr; 
+ 
+    align-items: center; 
+ 
+    padding: 0.8rem; 
+} 
+ 
+#directory-container.list-view .member-card img { 
+    width: 85px; 
+    height: 70px; 
+ 
+    margin: 0; 
+} 
+ 
+#directory-container.list-view .member-card h2 { 
+    font-size: 1rem; 
+} 
+ 
+#directory-container.list-view .member-card p { 
+    font-size: 0.85rem; 
+} 
+ 
+#directory-container.list-view .description, 
+#directory-container.list-view .membership { 
+    display: none; 
+} 
+ 
+/* ---------- FOOTER ---------- */ 
+/* ---------- FOOTER ---------- */ 
+ 
+footer { 
+    background-color: var(--surface); 
+ 
+    border-top: 2px solid var(--primary-dark); 
+ 
+    padding: 2rem 1rem; 
+ 
+    text-align: center; 
+} 
+ 
+/* Footer sections */ 
+footer section { 
+    margin-bottom: 1.5rem; 
+} 
+ 
+footer h3 { 
+    color: var(--primary); 
+ 
+    margin-bottom: 0.6rem; 
+} 
+ 
+footer p { 
+    color: var(--text-muted); 
+ 
+    margin-bottom: 0.7rem; 
+} 
+ 
+/* ---------- SOCIAL LINKS ---------- */ 
+ 
+.social-links ul { 
+    display: flex; 
+ 
+    justify-content: center; 
+    align-items: center; 
+ 
+    gap: 1rem; 
+ 
+    list-style: none; 
+ 
+    margin: 1rem 0; 
+} 
+ 
+.social-links li { 
+    transition: transform 0.2s ease; 
+} 
+ 
+.social-links li:hover { 
+    transform: translateY(-3px); 
+} 
+ 
+.social-links img { 
+    width: 35px; 
+    height: 35px; 
+} 
+ 
+.social-links a { 
+    display: inline-block; 
+} 
+ 
+.social-links a:hover { 
+    opacity: 0.8; 
+} 
+ 
+.social-links a:focus-visible { 
+    outline: 3px solid var(--focus); 
+    outline-offset: 3px; 
+} 
+ 
+/* ---------- FOOTER BOTTOM ---------- */ 
+ 
+.footer-bottom { 
+    color: var(--text-muted); 
+} 
+ 
+.footer-bottom p { 
+    margin-bottom: 0.7rem; 
+} 
+ 
+#last-modified { 
+    color: var(--primary); 
+    margin-left: 0.3rem; 
+} 
+ 
+/* ---------- RESPONSIVE IMAGE ---------- */ 
+@media (max-width: 500px) { 
+    .member-card img { 
+        max-width: 130px; 
+        height: 90px; 
+    } 
+} 
+ 
+/* ========================================= 
+   HOMEPAGE 
+   ========================================= */ 
+ 
+main { 
+    width: 100%; 
+    max-width: 1600px; 
+    margin: 0 auto; 
+    padding: 1rem; 
+} 
+ 
+ 
+/* ========================================= 
+   HERO 
+   ========================================= */ 
+ 
+.hero-image { 
+    position: relative; 
+    margin-bottom: 2rem; 
+    overflow: hidden; 
+    border-radius: 8px; 
+} 
+ 
+.hero-image picture, 
+.hero-image img { 
+    display: block; 
+    width: 100%; 
+} 
+ 
+.hero-image img { 
+    min-height: 350px; 
+    object-fit: cover; 
+} 
+ 
+ 
+.hero-content { 
+    position: absolute; 
+    left: 50%; 
+    bottom: 2%; 
+    transform: translateX(-50%); 
+ 
+    width: 94%; 
+    max-width: 1000px; 
+ 
+    padding: 1.25rem; 
+ 
+    text-align: center; 
+ 
+    background-color: rgba(18, 17, 17, 0.78); 
+ 
+    border-radius: 8px; 
+} 
+ 
+ 
+.hero-content h2 { 
+    margin-bottom: 0.5rem; 
+ 
+    color: var(--primary); 
+ 
+    font-size: 1.6rem; 
+} 
+ 
+ 
+.hero-content p { 
+    margin-bottom: 1rem; 
+ 
+    color: var(--text-light); 
+ 
+    line-height: 1.5; 
+} 
+ 
+ 
+.join-button { 
+    display: inline-block; 
+ 
+    padding: 0.7rem 1.4rem; 
+ 
+    background-color: var(--primary); 
+    color: var(--background); 
+ 
+    font-weight: 700; 
+    text-decoration: none; 
+ 
+    border-radius: 5px; 
+ 
+    transition: 
+        background-color 0.2s ease, 
+        transform 0.2s ease; 
+} 
+ 
+ 
+.join-button:hover { 
+    background-color: var(--primary-dark); 
+ 
+    transform: translateY(-2px); 
+} 
+ 
+ 
+/* ========================================= 
+   GENERAL CONTENT CARDS 
+   ========================================= */ 
+ 
+.content-card { 
+    margin-bottom: 2rem; 
+    padding: 1.5rem; 
+ 
+    background-color: var(--surface); 
+ 
+    border: 1px solid var(--border); 
+    border-radius: 8px; 
+ 
+    box-shadow: var(--shadow); 
+} 
+ 
+ 
+.content-card > h2 { 
+    margin-bottom: 1.25rem; 
+ 
+    color: var(--primary); 
+ 
+    text-align: center; 
+} 
+ 
+ 
+/* ========================================= 
+   CURRENT EVENTS 
+   ========================================= */ 
+ 
+.events-container { 
+    display: grid; 
+ 
+    grid-template-columns: 1fr; 
+ 
+    gap: 1rem; 
+} 
+ 
+ 
+.event-card { 
+    padding: 1rem; 
+ 
+    background-color: var(--surface-light); 
+ 
+    border-radius: 8px; 
+ 
+    border: 1px solid var(--border); 
+} 
+ 
+ 
+.event-card h3 { 
+    margin-bottom: 0.5rem; 
+ 
+    color: var(--primary); 
+} 
+ 
+ 
+.event-card p { 
+    color: var(--text-muted); 
+ 
+    line-height: 1.5; 
+} 
+ 
+ 
+/* ========================================= 
+   WEATHER 
+   ========================================= */ 
+ 
+.weather-current { 
+    display: flex; 
+ 
+    align-items: center; 
+    justify-content: center; 
+ 
+    gap: 1rem; 
+ 
+    margin-bottom: 1.5rem; 
+} 
+ 
+ 
+.weather-current img { 
+    width: 90px; 
+    height: 90px; 
+} 
+ 
+ 
+.temperature { 
+    margin: 0; 
+ 
+    color: var(--primary); 
+ 
+    font-size: 2rem; 
+    font-weight: 700; 
+} 
+ 
+ 
+.weather-current p { 
+    margin: 0.25rem 0; 
+ 
+    color: var(--text-muted); 
+} 
+ 
+ 
+.forecast h3 { 
+    margin-bottom: 1rem; 
+ 
+    text-align: center; 
+ 
+    color: var(--text-light); 
+} 
+ 
+ 
+.forecast-cards { 
+    display: grid; 
+ 
+    grid-template-columns: 1fr; 
+ 
+    gap: 1rem; 
+} 
+ 
+ 
+.forecast-card { 
+    padding: 1rem; 
+ 
+    text-align: center; 
+ 
+    background-color: var(--surface-light); 
+ 
+    border: 1px solid var(--border); 
+ 
+    border-radius: 8px; 
+} 
+ 
+ 
+.forecast-card h4 { 
+    margin-bottom: 0.5rem; 
+ 
+    color: var(--primary); 
+} 
+ 
+ 
+.forecast-card img { 
+    width: 60px; 
+    height: 60px; 
+} 
+ 
+ 
+.forecast-card p { 
+    margin: 0.35rem 0; 
+ 
+    color: var(--text-muted); 
+} 
+ 
+ 
+/* ========================================= 
+   BUSINESS SPOTLIGHTS 
+   ========================================= */ 
+ 
+#spotlights { 
+    display: block; 
+} 
+ 
+ 
+.spotlight-container { 
+    display: grid; 
+ 
+    grid-template-columns: 1fr; 
+ 
+    gap: 1.25rem; 
+} 
+ 
+ 
+.spotlight-card { 
+    display: flex; 
+ 
+    flex-direction: column; 
+ 
+    padding: 1.25rem; 
+ 
+    background-color: var(--surface-light); 
+ 
+    border: 1px solid var(--border); 
+ 
+    border-radius: 8px; 
+ 
+    box-shadow: var(--shadow); 
+} 
+ 
+ 
+.spotlight-card img { 
+    display: block; 
+ 
+    width: 120px; 
+    height: 80px; 
+ 
+    margin: 0 auto 1rem; 
+ 
+    object-fit: contain; 
+ 
+    border-radius: 5px; 
+} 
+ 
+ 
+.spotlight-card h3 { 
+    margin-bottom: 0.75rem; 
+ 
+    color: var(--primary); 
+ 
+    text-align: center; 
+} 
+ 
+ 
+.spotlight-card p { 
+    margin: 0.5rem 0; 
+ 
+    color: var(--text-muted); 
+ 
+    line-height: 1.5; 
+} 
+ 
+ 
+.spotlight-card strong { 
+    color: var(--text-light); 
+} 
+ 
+ 
+.spotlight-card a { 
+    color: var(--primary); 
+ 
+    text-decoration: none; 
+} 
+ 
+ 
+.spotlight-card a:hover { 
+    text-decoration: underline; 
+}.  /* ========================================= 
+   CHAMBER DIRECTORY - LARGE SCREEN STYLES 
+   ========================================= */ 
+ 
+@media screen and (min-width: 768px) { 
+ 
+    /* ---------- HEADER ---------- */ 
+ 
+    header { 
+        padding: 1rem 3rem; 
+    } 
+ 
+    header span { 
+        font-size: 1.5rem; 
+    } 
+ 
+    .hamburger { 
+        display: none; 
+    } 
+ 
+    /* ---------- NAVIGATION ---------- */ 
+ 
+    nav { 
+        display: flex; 
+        align-items: center; 
+        justify-content: space-between; 
+ 
+        padding: 0 3rem; 
+    } 
+ 
+    nav h1 { 
+        padding: 1rem 0; 
+    } 
+ 
+    nav ul { 
+        display: flex; 
+ 
+        flex-direction: row; 
+ 
+        align-items: stretch; 
+        justify-content: flex-end; 
+ 
+        gap: 0.3rem; 
+    } 
+ 
+    nav li { 
+        width: auto; 
+    } 
+ 
+    nav a { 
+        border-top: none; 
+ 
+        padding: 1rem 1.2rem; 
+ 
+        transition: 
+            background-color 0.2s ease, 
+            color 0.2s ease, 
+            transform 0.2s ease; 
+    } 
+ 
+    nav a:hover { 
+        padding-left: 1.2rem; 
+        transform: translateY(-2px); 
+    } 
+ 
+    /* Desktop wayfinder */ 
+    nav li.active a, 
+    nav a[aria-current="page"] { 
+        border-left: none; 
+        border-bottom: 4px solid var(--primary); 
+ 
+        background-color: rgba(255, 233, 122, 0.12); 
+    } 
+ 
+    /* ---------- MAIN ---------- */ 
+ 
+    main { 
+        width: 90%; 
+        padding-top: 2rem; 
+    } 
+ 
+    /* ---------- GRID VIEW ---------- */ 
+ 
+    #directory-container.grid-view { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 1.5rem; 
+    } 
+ 
+    /* ---------- LIST VIEW ---------- */ 
+ 
+    #directory-container.list-view .member-card { 
+        grid-template-columns: 140px 1fr 180px; 
+ 
+        min-height: 110px; 
+ 
+        padding: 1rem 1.5rem; 
+    } 
+ 
+    #directory-container.list-view .member-card img { 
+        width: 110px; 
+        height: 80px; 
+    } 
+ 
+    #directory-container.list-view .member-card .description { 
+        display: block; 
+        grid-column: 3; 
+        grid-row: 1; 
+    } 
+ 
+    #directory-container.list-view .member-card .membership { 
+        display: inline-block; 
+    } 
+ 
+    /* ---------- FOOTER ---------- */ 
+ 
+    footer { 
+        padding: 2.5rem 3rem; 
+    } 
+} 
+ 
+ 
+/* ========================================= 
+   EXTRA LARGE SCREENS 
+   ========================================= */ 
+ 
+@media screen and (min-width: 1000px) { 
+ 
+    header { 
+        padding-left: 5%; 
+        padding-right: 5%; 
+    } 
+ 
+    nav { 
+        padding-left: 5%; 
+        padding-right: 5%; 
+    } 
+ 
+    main { 
+        width: 90%; 
+        max-width: 1400px; 
+    } 
+ 
+    #directory-container.grid-view { 
+        grid-template-columns: repeat(3, 1fr); 
+    } 
+ 
+    .member-card { 
+        padding: 1.5rem; 
+    } 
+ 
+    .member-card img { 
+        height: 140px; 
+    } 
+} 
+ 
+ 
+/* ========================================= 
+   VERY LARGE SCREENS 
+   ========================================= */ 
+ 
+@media screen and (min-width: 1400px) { 
+ 
+    #directory-container.grid-view { 
+        grid-template-columns: repeat(4, 1fr); 
+    } 
+} 
+ 
+/* ========================================= 
+   FOOTER - LARGE SCREEN 
+   ========================================= */ 
+ 
+@media screen and (min-width: 768px) { 
+ 
+    footer { 
+        display: grid; 
+ 
+        grid-template-columns: 1fr 1fr 1fr; 
+ 
+        align-items: center; 
+ 
+        gap: 2rem; 
+ 
+        padding: 2.5rem 5%; 
+ 
+        text-align: center; 
+    } 
+ 
+    /* Contact - LEFT */ 
+    footer .contact-info { 
+        text-align: left; 
+        margin-bottom: 0; 
+    } 
+ 
+    /* Social - CENTER */ 
+    footer .social-links { 
+        text-align: center; 
+        margin-bottom: 0; 
+    } 
+ 
+    footer .social-links ul { 
+        justify-content: center; 
+    } 
+ 
+    /* Footer information - RIGHT */ 
+    footer .footer-bottom { 
+        text-align: right; 
+        margin-bottom: 0; 
+    } 
+} 
+ 
+/* ========================================= 
+   LARGE SCREEN LAYOUT 
+   ========================================= */ 
+ 
+@media screen and (min-width: 768px) { 
+ 
+    main { 
+        padding: 1.5rem; 
+    } 
+ 
+ 
+    /* ===================================== 
+       HERO 
+       ===================================== */ 
+ 
+    .hero-content { 
+        bottom: 5%; 
+ 
+        width: 80%; 
+ 
+        padding: 2rem; 
+    } 
+ 
+ 
+    .hero-content h2 { 
+        font-size: 2.2rem; 
+    } 
+ 
+ 
+    .hero-content p { 
+        font-size: 1.1rem; 
+    } 
+ 
+ 
+    /* ===================================== 
+       CURRENT EVENTS 
+       ===================================== */ 
+ 
+    .events-container { 
+        grid-template-columns: 
+            repeat(2, 1fr); 
+    } 
+ 
+ 
+    /* ===================================== 
+       WEATHER 
+       ===================================== */ 
+ 
+    .forecast-cards { 
+        grid-template-columns: 
+            repeat(3, 1fr); 
+    } 
+ 
+ 
+    /* ===================================== 
+       BUSINESS SPOTLIGHTS 
+       ===================================== */ 
+ 
+    .spotlight-container { 
+        grid-template-columns: 
+            repeat(3, 1fr); 
+    } 
+ 
+ 
+    .spotlight-card { 
+        min-height: 100%; 
+    } 
+} 
+ 
+ 
+@media screen and (min-width: 1024px) { 
+ 
+    main { 
+        padding: 2rem; 
+    } 
+ 
+ 
+    /* ===================================== 
+       HERO 
+       ===================================== */ 
+ 
+    .hero-content { 
+        width: 70%; 
+ 
+        padding: 2.5rem; 
+    } 
+ 
+ 
+    .hero-content h2 { 
+        font-size: 2.5rem; 
+    } 
+ 
+ 
+    /* ===================================== 
+       CURRENT EVENTS 
+       ===================================== */ 
+ 
+    .events-container { 
+        grid-template-columns: 
+            repeat(3, 1fr); 
+    } 
+ 
+ 
+    /* ===================================== 
+       WEATHER 
+       ===================================== */ 
+ 
+    #weather { 
+        max-width: 1200px; 
+ 
+        margin-left: auto; 
+        margin-right: auto; 
+    } 
+ 
+ 
+    /* ===================================== 
+       SPOTLIGHTS 
+       ===================================== */ 
+ 
+    #spotlights { 
+        max-width: 1400px; 
+ 
+        margin-left: auto; 
+        margin-right: auto; 
+    } 
+}. // =========================================
+
+// API FUNCTIONS
+
+// =========================================
+
+
+
+// ---------- MEMBER DATA ----------
+
+
+
+export async function fetchMembers() {
+
+    const response = await fetch("data/member.json");
+
+
+
+    if (!response.ok) {
+
+        throw new Error(`Member data error: ${response.status}`);
+
+    }
+
+
+
+    return await response.json();
+
+}
+
+
+
+
+
+// ---------- WEATHER API ----------
+
+
+
+const API_KEY = "YOUR_API_KEY";
+
+
+
+const currentWeatherURL =
+
+    `https://api.openweathermap.org/data/2.5/weather?lat=-1.95&lon=30.10&units=imperial&appid=${API_KEY}`;
+
+
+
+const forecastURL =
+
+    `https://api.openweathermap.org/data/2.5/forecast?lat=-1.95&lon=30.10&units=imperial&appid=${API_KEY}`; 
+ 
+ 
+// ---------- CURRENT WEATHER ---------- 
+ 
+export async function fetchCurrentWeather() { 
+ 
+    const response = await fetch(currentWeatherURL); 
+ 
+    if (!response.ok) { 
+        throw new Error(`Weather error: ${response.status}`); 
+    } 
+ 
+    return await response.json(); 
+} 
+ 
+ 
+// ---------- WEATHER FORECAST ---------- 
+ 
+export async function fetchForecast() { 
+ 
+    const response = await fetch(forecastURL); 
+ 
+    if (!response.ok) { 
+        throw new Error(`Forecast error: ${response.status}`); 
+    } 
+ 
+    return await response.json(); 
+}. /* =========================================
+
+   CHAMBER DIRECTORY JAVASCRIPT
+
+   ========================================= */
+
+
+
+// ---------- BUSINESS DATA ----------
+
+
+
+const directoryData = document.querySelector("#directory-container");
+
+async function getDirectoryData() {
+
+    try {
+
+        const response = await fetch("data/member.json");
+
+        if (!response.ok) {
+
+            throw new Error(`HTTP error! status: ${response.status}`);
+
+        }
+
+        const data = await response.json();
+
+        displayMembers(data);
+
+    } catch (error) {
+
+        console.error("Error fetching directory data:", error);
+
+        directoryData.innerHTML = "<p>Sorry, we are unable to load the directory at this time. Please try again later.</p>";
+
+
+
+    }
+
+}
+
+
+
+
+
+// ---------- DIRECTORY CONTAINER ----------
+
+
+
+const directoryContainer =
+
+    document.querySelector("#directory-container");
+
+
+
+
+
+// ---------- DISPLAY MEMBERS ----------
+
+
+
+function displayMembers(data) {
+
+
+
+    directoryContainer.innerHTML = "";
+
+
+
+    data.forEach(member => {
+
+
+
+        const card = document.createElement("article");
+
+
+
+        card.classList.add("member-card");
+
+
+
+        card.innerHTML = `
+
+            <img 
+
+                src="${member.image}" 
+
+                alt="${member.name} logo"
+
+                loading="lazy"
+
+            >
+
+
+
+            <div class="member-information">
+
+
+
+                <h2>${member.name}</h2>
+
+
+
+                <p class="category">
+
+                    ${member.category}
+
+                </p>
+
+
+
+                <p>
+
+                    <strong>Address:</strong>
+
+                    ${member.address}
+
+                </p>
+
+
+
+                <p>
+
+                    <strong>Phone:</strong>
+
+                    ${member.phone}
+
+                </p>
+
+
+
+                <p class="description">
+
+                    ${member.description}
+
+                </p>
+
+
+
+                <span class="membership">
+
+                    ${member.membership}
+
+                </span>
+
+
+
+                <br>
+
+
+
+                <a 
+
+                    href="${member.website}" 
+
+                    target="_blank"
+
+                    rel="noopener noreferrer"
+
+                    aria-label="Visit ${member.name} website"
+
+                >
+
+                    Visit Website
+
+                </a>
+
+
+
+            </div>
+
+        `;
+
+
+
+        directoryContainer.appendChild(card);
+
+    });
+
+}
+
+
+
+// ---------- GRID VIEW ----------
+
+
+
+const gridButton = document.querySelector("#grid-view");
+
+
+
+gridButton.addEventListener("click", () => {
+
+
+
+    directoryContainer.classList.remove("list-view");
+
+    directoryContainer.classList.add("grid-view");
+
+
+
+    gridButton.setAttribute("aria-pressed", "true");
+
+    listButton.setAttribute("aria-pressed", "false");
+
+});
+
+
+
+
+
+// ---------- LIST VIEW ----------
+
+
+
+const listButton = document.querySelector("#list-view");
+
+
+
+listButton.addEventListener("click", () => {
+
+
+
+    directoryContainer.classList.remove("grid-view");
+
+    directoryContainer.classList.add("list-view");
+
+
+
+    listButton.setAttribute("aria-pressed", "true");
+
+    gridButton.setAttribute("aria-pressed", "false");
+
+});
+
+
+
+
+
+// ---------- HAMBURGER MENU ----------
+
+
+
+const navButton = document.querySelector("#nav-button");
+
+const navList = document.querySelector("nav ul");
+
+
+
+navButton.setAttribute("aria-expanded", "false");
+
+
+
+navButton.addEventListener("click", () => {
+
+
+
+    const isOpen = navList.classList.toggle("show");
+
+
+
+    navButton.setAttribute(
+
+        "aria-expanded",
+
+        isOpen
+
+    );
+
+
+
+    navButton.setAttribute(
+
+        "aria-label",
+
+        isOpen
+
+            ? "Close navigation menu"
+
+            : "Open navigation menu"
+
+    );
+
+});
+
+
+
+
+
+// ---------- WAYFINDING ----------
+
+
+
+const currentPage =
+
+    window.location.pathname.split("/").pop() || "directory.html";
+
+
+
+const navLinks = document.querySelectorAll("nav a");
+
+
+
+navLinks.forEach(link => {
+
+
+
+    const linkPage =
+
+        link.getAttribute("href");
+
+
+
+    if (linkPage === currentPage) {
+
+
+
+        link.parentElement.classList.add("active");
+
+
+
+        link.setAttribute(
+
+            "aria-current",
+
+            "page"
+
+        );
+
+    }
+
+});
+
+
+
+
+
+// ---------- LAST MODIFIED ----------
+
+
+
+const lastModified =
+
+    document.querySelector("#last-modified");
+
+
+
+if (lastModified) {
+
+
+
+    lastModified.textContent =
+
+        document.lastModified;
+
+}
+
+
+
+// Display the current copyright year
+
+const copyrightYear = document.querySelector("#copyright-year");
+
+copyrightYear.textContent = new Date().getFullYear();
+
+
+
+
+
+
+
+// ---------- INITIAL DIRECTORY ----------
+
+
+
+getDirectoryData();
+
+
+
+const events = document.querySelector('#current-events');
+
+const weather = document.querySelector('#weather');
+
+const spotlights = document.querySelector('#spotlights');
+
+const url = "https://api.openweathermap.org/data/2.5/weather?lat=-1.95&lon=30.10&units=imperial&appid=223444e9d0408208854c773748283299";
+
+
+
+// async function for consuming API
+
+async function apiFetch() {
+
+    try {
+
+        const response = await fetch(url);
+
+        if (!response.ok){
+
+            throw new Error (`HTTP error: ${response.status}`);
+
+        }
+
+        const data = await response.json();
+
+        displayWeather(data);
+
+    }
+
+    catch(error) {
+
+        console.error("Weather error:", error);
+
+        weather.innerHTML = "<p>Weather Information is currently unvailable.</p>";
+
+    }
+
+    
+
+}
+
+
+
+// Function to display weather data
+
+function displayWeather(data) {
+
+    weather.innerHTML = `
+
+    <h2>Current Weather</h2>
+
+    <div class="weather-current">
+
+        <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" 
+        alt="${data.weather[0].description}"> 
+        <div> 
+            <p class="temperature">${data.main.temp}°F</p> 
+            <p>${data.weather[0].description}</p> 
+            </div> 
+    </div> 
+     
+    <div class="forecast"> 
+    <h3>3-Day Forecast</h3> 
+    <div class="forecast-cards"> 
+        <div class="forecast-card"> 
+            <h4>Tomorrow</h4> 
+            <p>79°F</p> 
+        <div class="forecast-card"> 
+            <h4>Day 2</h4> 
+            <p>87°F</p> 
+        <div class="forecast-card"> 
+            <h4>Day 3</p> 
+            <p>73°F</p> 
+        </div> 
+    </div>`; 
+}; 
+ 
+// Mambers 
+async function fetchMemberData() { 
+    try { 
+        const response = await fetch('data/data.json'); 
+        if (!response.ok) { 
+            throw new Error(`HTTP error: ${response.status}`); 
+        } 
+        const data = await response.json(); 
+ 
+        // Keep only Gold and Silver Members 
+        const qualifiedMembers = data.filter(member => { 
+            member.membership === "Gold Member" || 
+            member.membership === "Silver Member" 
+        }); 
+ 
+        // Randomly Select 3 Members 
+        const selectMembers = getRandomMembers(qualifiedMembers, 3); 
+        displayMambers(selectMembers); 
+    } catch (error) { 
+        console.error("Member data error:", error); 
+        spotlights.innerHTML = `<p>Unable to load business spotlights.</p>`; 
+    } 
+} 
+ 
+// Random members 
+function getRandomMembers(members, number) { 
+     const shuffled = [...members].sort(() => Math.random() - 0.5); 
+ 
+    return shuffled.slice(0, number); 
+} 
+ 
+function displayMembers(members) { 
+    spotlights.innerHTML = ` 
+    <h2>Business Spotlights</h2> 
+        <div class="spotlight-container"> 
+            ${members.map(member => ` 
+                <article class="spotlight-card"> 
+ 
+                    <img  
+                        src="${member.image}" 
+                        alt="${member.name} logo" 
+                        loading="lazy" 
+                    > 
+ 
+                    <h3>${member.name}</h3> 
+ 
+                    <p> 
+                        <strong>Membership:</strong> 
+                        ${member.membership} 
+                    </p> 
+ 
+                    <p> 
+                        <strong>Phone:</strong> 
+                        <a href="tel:${member.phone}"> 
+                            ${member.phone} 
+                        </a> 
+                    </p> 
+ 
+                    <p> 
+                        <strong>Address:</strong> 
+                        ${member.address} 
+                    </p> 
+ 
+                    <p> 
+                        <strong>Website:</strong> 
+                        <a  
+                            href="${member.website}" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                        > 
+                            Visit Website 
+                        </a> 
+                    </p> 
+ 
+                </article> 
+ 
+            `).join('')} 
+        </div> 
+    `; 
+} 
+ 
+ 
+// ------------------------- 
+// RUN FUNCTIONS 
+// ------------------------- 
+ 
+apiFetch(); 
+fetchMemberData(); 
+// ========================================= 
+// DIRECTORY PAGE 
+// ========================================= 
+ 
+import { fetchMembers } from "./api.mjs"; 
+import { displayMembers } from "./ui.mjs"; 
+import { 
+    setupNavigation, 
+    setupWayfinding, 
+    setupFooter 
+} from "./utils.mjs"; 
+ 
+ 
+// ---------- LOAD DIRECTORY ---------- 
+ 
+async function loadDirectory() { 
+ 
+    const directoryContainer = 
+        document.querySelector("#directory-container"); 
+ 
+    try { 
+ 
+        const data = await fetchMembers(); 
+ 
+        displayMembers(data); 
+ 
+        setupViewButtons(); 
+ 
+    } catch (error) { 
+ 
+        console.error( 
+            "Error fetching directory data:", 
+            error 
+        ); 
+ 
+        directoryContainer.innerHTML = ` 
+            <p> 
+                Sorry, we are unable to load the directory 
+                at this time. Please try again later. 
+            </p> 
+        `; 
+    } 
+} 
+ 
+ 
+// ---------- GRID / LIST VIEW ---------- 
+ 
+function setupViewButtons() { 
+ 
+    const directoryContainer = 
+        document.querySelector("#directory-container"); 
+ 
+    const gridButton = 
+        document.querySelector("#grid-view"); 
+ 
+    const listButton = 
+        document.querySelector("#list-view"); 
+ 
+ 
+    gridButton.addEventListener("click", () => { 
+ 
+        directoryContainer.classList.remove("list-view"); 
+ 
+        directoryContainer.classList.add("grid-view"); 
+ 
+        gridButton.setAttribute( 
+            "aria-pressed", 
+            "true" 
+        ); 
+ 
+        listButton.setAttribute( 
+            "aria-pressed", 
+            "false" 
+        ); 
+    }); 
+ 
+ 
+    listButton.addEventListener("click", () => { 
+ 
+        directoryContainer.classList.remove("grid-view"); 
+ 
+        directoryContainer.classList.add("list-view"); 
+ 
+        listButton.setAttribute( 
+            "aria-pressed", 
+            "true" 
+        ); 
+ 
+        gridButton.setAttribute( 
+            "aria-pressed", 
+            "false" 
+        ); 
+    }); 
+} 
+ 
+ 
+// ---------- SHARED FUNCTIONS ---------- 
+ 
+setupNavigation(); 
+ 
+setupWayfinding(); 
+ 
+setupFooter(); 
+ 
+ 
+// ---------- START DIRECTORY ---------- 
+ 
+loadDirectory();    // ========================================= 
+// BUSINESS SPOTLIGHTS 
+// ========================================= 
+ 
+import { fetchMembers } from "./api.mjs"; 
+import { displaySpotlights } from "./ui.mjs"; 
+ 
+ 
+// ---------- LOAD SPOTLIGHTS ---------- 
+ 
+export async function loadSpotlights() { 
+ 
+    const spotlights = 
+        document.querySelector("#spotlights"); 
+ 
+    try { 
+ 
+        const data = await fetchMembers(); 
+ 
+ 
+        // Keep only Gold and Silver Members 
+        const qualifiedMembers = data.filter(member => 
+            member.membership === "Gold Member" || 
+            member.membership === "Silver Member" 
+        ); 
+ 
+ 
+        // Randomly select 3 members 
+        const selectedMembers = 
+            getRandomMembers( 
+                qualifiedMembers, 
+                3 
+            ); 
+ 
+ 
+        displaySpotlights(selectedMembers); 
+ 
+    } catch (error) { 
+ 
+        console.error( 
+            "Member data error:", 
+            error 
+        ); 
+ 
+        spotlights.innerHTML = ` 
+            <p> 
+                Unable to load business spotlights. 
+            </p> 
+        `; 
+    } 
+} 
+ 
+ 
+// ---------- RANDOM MEMBERS ---------- 
+ 
+function getRandomMembers(members, number) { 
+ 
+    const shuffled = 
+        [...members].sort( 
+            () => Math.random() - 0.5 
+        ); 
+ 
+    return shuffled.slice(0, number); 
+}  // =========================================
+
+// USER INTERFACE FUNCTIONS
+
+// =========================================
+
+
+
+
+
+// ---------- DIRECTORY MEMBERS ----------
+
+
+
+export function displayMembers(data) {
+
+
+
+    const directoryContainer =
+
+        document.querySelector("#directory-container");
+
+
+
+    directoryContainer.innerHTML = "";
+
+
+
+    data.forEach(member => {
+
+
+
+        const card = document.createElement("article");
+
+
+
+        card.classList.add("member-card");
+
+
+
+        card.innerHTML = `
+
+            <img 
+
+                src="${member.image}" 
+
+                alt="${member.name} logo"
+
+                loading="lazy"
+
+            >
+
+
+
+            <div class="member-information">
+
+
+
+                <h2>${member.name}</h2>
+
+
+
+                <p class="category">
+
+                    ${member.category}
+
+                </p>
+
+
+
+                <p>
+
+                    <strong>Address:</strong>
+
+                    ${member.address}
+
+                </p>
+
+
+
+                <p>
+
+                    <strong>Phone:</strong>
+
+                    ${member.phone}
+
+                </p>
+
+
+
+                <p class="description">
+
+                    ${member.description}
+
+                </p>
+
+
+
+                <span class="membership">
+
+                    ${member.membership}
+
+                </span>
+
+
+
+                <br>
+
+
+
+                <a 
+
+                    href="${member.website}" 
+
+                    target="_blank"
+
+                    rel="noopener noreferrer"
+
+                    aria-label="Visit ${member.name} website"
+
+                >
+
+                    Visit Website
+
+                </a>
+
+
+
+            </div>
+
+        `;
+
+
+
+        directoryContainer.appendChild(card);
+
+    });
+
+}
+
+
+
+
+
+// ---------- BUSINESS SPOTLIGHTS ----------
+
+
+
+export function displaySpotlights(members) {
+
+
+
+    const spotlights =
+
+        document.querySelector("#spotlights");
+
+
+
+    spotlights.innerHTML = `
+
+        <h2>Business Spotlights</h2>
+
+
+
+        <div class="spotlight-container">
+
+
+
+            ${members.map(member => `
+
+
+
+                <article class="spotlight-card">
+
+
+
+                    <img
+
+                        src="${member.image}"
+
+                        alt="${member.name} logo"
+
+                        loading="lazy"
+
+                    >
+
+
+
+                    <h3>${member.name}</h3>
+
+
+
+                    <p>
+
+                        <strong>Membership:</strong>
+
+                        ${member.membership}
+
+                    </p>
+
+
+
+                    <p>
+
+                        <strong>Phone:</strong>
+
+                        <a href="tel:${member.phone}">
+
+                            ${member.phone}
+
+                        </a>
+
+                    </p>
+
+
+
+                    <p>
+
+                        <strong>Address:</strong>
+
+                        ${member.address}
+
+                    </p>
+
+
+
+                    <p>
+
+                        <strong>Website:</strong>
+
+                        <a
+
+                            href="${member.website}"
+
+                            target="_blank"
+
+                            rel="noopener noreferrer"
+
+                        >
+
+                            Visit Website
+
+                        </a>
+
+                    </p>
+
+
+
+                </article>
+
+
+
+            `).join("")}
+
+
+
+        </div>
+
+    `;
+
+}
+
+
+
+
+
+// ---------- WEATHER ----------
+
+
+
+export function displayWeather(current, forecast) {
+
+
+
+    const weather =
+
+        document.querySelector("#weather");
+
+
+
+    weather.innerHTML = `
+
+        <h2>Current Weather</h2>
+
+
+
+        <div class="weather-current">
+
+
+
+            <img
+
+                src="https://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png"
+
+                alt="${current.weather[0].description}"
+
+            >
+
+
+
+            <div>
+
+
+
+                <p class="temperature">
+
+                    ${Math.round(current.main.temp)}°F
+
+                </p>
+
+
+
+                <p>
+
+                    ${current.weather[0].description}
+
+                </p>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <div class="forecast">
+
+
+
+            <h3>3-Day Forecast</h3>
+
+
+
+            <div class="forecast-cards">
+
+
+
+                ${forecast.map(day => `
+
+
+
+                    <article class="forecast-card">
+
+
+
+                        <h4>
+
+                            ${formatDate(day.dt_txt)}
+
+                        </h4>
+
+
+
+                        <img
+
+                            src="https://openweathermap.org/img/wn/${day.weather[0].icon}.png" 
+                            alt="${day.weather[0].description}" 
+                        > 
+ 
+                        <p> 
+                            ${Math.round(day.main.temp)}°F 
+                        </p> 
+ 
+                        <p> 
+                            ${day.weather[0].description} 
+                        </p> 
+ 
+                    </article> 
+ 
+                `).join("")} 
+ 
+            </div> 
+ 
+        </div> 
+    `; 
+} 
+ 
+ 
+// ---------- FORMAT FORECAST DATE ---------- 
+ 
+function formatDate(dateString) { 
+ 
+    const date = new Date(dateString); 
+ 
+    return date.toLocaleDateString("en-US", { 
+        weekday: "short", 
+        month: "short", 
+        day: "numeric" 
+    }); 
+}. // ========================================= 
+// SHARED WEBSITE FUNCTIONS 
+// ========================================= 
+ 
+ 
+// ---------- HAMBURGER MENU ---------- 
+ 
+export function setupNavigation() { 
+ 
+    const navButton = 
+        document.querySelector("#nav-button"); 
+ 
+    const navList = 
+        document.querySelector("#primary-navigation"); 
+ 
+ 
+    if (!navButton || !navList) { 
+        return; 
+    } 
+ 
+ 
+    navButton.setAttribute( 
+        "aria-expanded", 
+        "false" 
+    ); 
+ 
+ 
+    navButton.addEventListener("click", () => { 
+ 
+        const isOpen = 
+            navList.classList.toggle("show"); 
+ 
+ 
+        navButton.setAttribute( 
+            "aria-expanded", 
+            isOpen 
+        ); 
+ 
+ 
+        navButton.setAttribute( 
+            "aria-label", 
+            isOpen 
+                ? "Close navigation menu" 
+                : "Open navigation menu" 
+        ); 
+ 
+    }); 
+} 
+ 
+ 
+// ---------- WAYFINDING ---------- 
+ 
+export function setupWayfinding() { 
+ 
+    const currentPage = 
+        window.location.pathname.split("/").pop() 
+        || "index.html"; 
+ 
+ 
+    const navLinks = 
+        document.querySelectorAll("nav a"); 
+ 
+ 
+    navLinks.forEach(link => { 
+ 
+        const linkPage = 
+            link.getAttribute("href"); 
+ 
+ 
+        if (linkPage === currentPage) { 
+ 
+            link.parentElement.classList.add( 
+                "active" 
+            ); 
+ 
+            link.setAttribute( 
+                "aria-current", 
+                "page" 
+            ); 
+        } 
+ 
+    }); 
+} 
+ 
+ 
+// ---------- FOOTER ---------- 
+ 
+export function setupFooter() { 
+ 
+    const copyrightYear = 
+        document.querySelector("#copyright-year"); 
+ 
+    const lastModified = 
+        document.querySelector("#last-modified"); 
+ 
+ 
+    if (copyrightYear) { 
+ 
+        copyrightYear.textContent = 
+            new Date().getFullYear(); 
+ 
+    } 
+ 
+ 
+    if (lastModified) { 
+ 
+        lastModified.textContent = 
+            document.lastModified; 
+ 
+    } 
+}. // ========================================= 
+// WEATHER 
+// ========================================= 
+ 
+import { 
+    fetchCurrentWeather, 
+    fetchForecast 
+} from "./api.mjs"; 
+ 
+import { displayWeather } from "./ui.mjs"; 
+ 
+ 
+// ---------- LOAD WEATHER ---------- 
+ 
+export async function loadWeather() { 
+ 
+    const weather = 
+        document.querySelector("#weather"); 
+ 
+    try { 
+ 
+        const current = 
+            await fetchCurrentWeather(); 
+ 
+        const forecast = 
+            await fetchForecast(); 
+ 
+ 
+        const threeDays = 
+            getThreeDayForecast(forecast); 
+ 
+ 
+        displayWeather( 
+            current, 
+            threeDays 
+        ); 
+ 
+    } catch (error) { 
+ 
+        console.error( 
+            "Weather error:", 
+            error 
+        ); 
+ 
+        weather.innerHTML = ` 
+            <h2>Current Weather</h2> 
+ 
+            <p> 
+                Weather information is currently unavailable. 
+            </p> 
+        `; 
+    } 
+} 
+ 
+ 
+// ---------- GET THREE DAYS ---------- 
+ 
+function getThreeDayForecast(data) { 
+ 
+    const daily = {}; 
+ 
+ 
+    data.list.forEach(item => { 
+ 
+        const date = 
+            item.dt_txt.split(" ")[0]; 
+ 
+ 
+        if (!daily[date]) { 
+ 
+            daily[date] = item; 
+ 
+        } 
+ 
+    }); 
+ 
+ 
+    return Object.values(daily).slice(1, 4); 
+}.  // =========================================
+
+
+
+// HOME PAGE
+
+
+
+// =========================================
+
+
+
+import { loadWeather } from "./weather.mjs";
+
+
+
+import { loadSpotlights } from "./spotlights.mjs";
+
+
+
+import {
+
+
+
+    setupNavigation,
+
+
+
+    setupWayfinding,
+
+
+
+    setupFooter
+
+
+
+} from "./utils.mjs";
+
+
+
+
+
+// ---------- SHARED FEATURES ----------
+
+
+
+setupNavigation();
+
+
+
+setupWayfinding();
+
+
+
+setupFooter();
+
+
+
+
+
+// ---------- HOMEPAGE DATA ----------
+
+
+
+loadWeather();
+
+
+
+loadSpotlights();. Why directory page not being populated, hamburg menu not opening on small screens. Reorganise and fix 

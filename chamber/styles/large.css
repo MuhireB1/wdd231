@@ -207,3 +207,130 @@
         margin-bottom: 0;
     }
 }
+
+/* =========================================
+   LARGE SCREEN LAYOUT
+   ========================================= */
+
+@media screen and (min-width: 768px) {
+
+    main {
+        padding: 1.5rem;
+    }
+
+
+    /* =====================================
+       HERO
+       ===================================== */
+
+    .hero-content {
+        bottom: 5%;
+
+        width: 80%;
+
+        padding: 2rem;
+    }
+
+
+    .hero-content h2 {
+        font-size: 2.2rem;
+    }
+
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+
+    /* =====================================
+       CURRENT EVENTS
+       ===================================== */
+
+    .events-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* =====================================
+       WEATHER
+       ===================================== */
+
+    .forecast-cards {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    /* =====================================
+       BUSINESS SPOTLIGHTS
+       ===================================== */
+
+    .spotlight-container {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .spotlight-card {
+        min-height: 100%;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+
+    main {
+        padding: 2rem;
+    }
+
+
+    /* =====================================
+       HERO
+       ===================================== */
+
+    .hero-content {
+        width: 70%;
+
+        padding: 2.5rem;
+    }
+
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+
+    /* =====================================
+       CURRENT EVENTS
+       ===================================== */
+
+    .events-container {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    /* =====================================
+       WEATHER
+       ===================================== */
+
+    #weather {
+        max-width: 1200px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* =====================================
+       SPOTLIGHTS
+       ===================================== */
+
+    #spotlights {
+        max-width: 1400px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

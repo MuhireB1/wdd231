@@ -4,10 +4,11 @@
 
 // ---------- BUSINESS DATA ----------
 
-const directoryData = document.querySelector("#directory-container");
+const directoryContainer = document.querySelector("#directory-container");
+
 async function getDirectoryData() {
     try {
-        const response = await fetch("data/member.json");
+        const response = await fetch("./data/member.json");
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -15,21 +16,18 @@ async function getDirectoryData() {
         displayMembers(data);
     } catch (error) {
         console.error("Error fetching directory data:", error);
-        directoryData.innerHTML = "<p>Sorry, we are unable to load the directory at this time. Please try again later.</p>";
-
+        if (directoryContainer) {
+            directoryContainer.innerHTML = "<p>Sorry, we are unable to load the directory at this time. Please try again later.</p>";
+        }
     }
 }
-
-
-// ---------- DIRECTORY CONTAINER ----------
-
-const directoryContainer =
-    document.querySelector("#directory-container");
-
 
 // ---------- DISPLAY MEMBERS ----------
 
 function displayMembers(data) {
+    if (!directoryContainer || !Array.isArray(data)) {
+        throw new Error("Directory data must be an array.");
+    }
 
     directoryContainer.innerHTML = "";
 
@@ -94,7 +92,7 @@ function displayMembers(data) {
 
 const gridButton = document.querySelector("#grid-view");
 
-gridButton.addEventListener("click", () => {
+gridButton?.addEventListener("click", () => {
 
     directoryContainer.classList.remove("list-view");
     directoryContainer.classList.add("grid-view");
@@ -108,7 +106,7 @@ gridButton.addEventListener("click", () => {
 
 const listButton = document.querySelector("#list-view");
 
-listButton.addEventListener("click", () => {
+listButton?.addEventListener("click", () => {
 
     directoryContainer.classList.remove("grid-view");
     directoryContainer.classList.add("list-view");
@@ -121,26 +119,21 @@ listButton.addEventListener("click", () => {
 // ---------- HAMBURGER MENU ----------
 
 const navButton = document.querySelector("#nav-button");
-const navList = document.querySelector("nav ul");
+const navList = document.querySelector("#primary-navigation");
 
-navButton.setAttribute("aria-expanded", "false");
+if (navButton && navList) {
+    navButton.setAttribute("aria-expanded", "false");
 
-navButton.addEventListener("click", () => {
+    navButton.addEventListener("click", () => {
+        const isOpen = navList.classList.toggle("show");
 
-    const isOpen = navList.classList.toggle("show");
-
-    navButton.setAttribute(
-        "aria-expanded",
-        isOpen
-    );
-
-    navButton.setAttribute(
-        "aria-label",
-        isOpen
-            ? "Close navigation menu"
-            : "Open navigation menu"
-    );
-});
+        navButton.setAttribute("aria-expanded", String(isOpen));
+        navButton.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+    });
+}
 
 
 // ---------- WAYFINDING ----------
@@ -180,7 +173,9 @@ if (lastModified) {
 
 // Display the current copyright year
 const copyrightYear = document.querySelector("#copyright-year");
-copyrightYear.textContent = new Date().getFullYear();
+if (copyrightYear) {
+    copyrightYear.textContent = new Date().getFullYear();
+}
 
 
 
