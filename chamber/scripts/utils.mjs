@@ -4,83 +4,43 @@
 
 
 // ---------- HAMBURGER MENU ----------
-
 export function setupNavigation() {
+    const navButton = document.querySelector("#nav-button");
+    const navList = document.querySelector("#primary-navigation");
 
-    const navButton =
-        document.querySelector("#nav-button");
-
-    const navList =
-        document.querySelector("#primary-navigation");
-
-
-    if (!navButton || !navList) {
-        return;
-    }
-
-
-    navButton.setAttribute(
-        "aria-expanded",
-        "false"
-    );
-
+    if (!navButton || !navList) return;
 
     navButton.addEventListener("click", () => {
+        const isOpen = navList.classList.toggle("show");
 
-        const isOpen =
-            navList.classList.toggle("show");
-
-
-        navButton.setAttribute(
-            "aria-expanded",
-            isOpen
-        );
-
-
+        navButton.setAttribute("aria-expanded", String(isOpen));
         navButton.setAttribute(
             "aria-label",
-            isOpen
-                ? "Close navigation menu"
-                : "Open navigation menu"
+            isOpen ? "Close navigation menu" : "Open navigation menu"
         );
-
     });
 }
-
 
 // ---------- WAYFINDING ----------
-
 export function setupWayfinding() {
+    const page = window.location.pathname.split("/").pop().toLowerCase();
+    const currentPage = page === "thankyou.html" ? "join.html" : page || "index.html";
 
-    const currentPage =
-        window.location.pathname.split("/").pop()
-        || "index.html";
+    document.querySelectorAll("nav a").forEach((link) => {
+        const linkPage = new URL(link.href).pathname.split("/").pop().toLowerCase();
+        const isCurrentPage = linkPage === currentPage;
 
+        link.parentElement.classList.toggle("active", isCurrentPage);
 
-    const navLinks =
-        document.querySelectorAll("nav a");
-
-
-    navLinks.forEach(link => {
-
-        const linkPage =
-            link.getAttribute("href");
-
-
-        if (linkPage === currentPage) {
-
-            link.parentElement.classList.add(
-                "active"
-            );
-
-            link.setAttribute(
-                "aria-current",
-                "page"
-            );
+        if (isCurrentPage) {
+            link.setAttribute("aria-current", "page");
+        } else {
+            link.removeAttribute("aria-current");
         }
-
     });
 }
+
+// ...existing code...
 
 
 // ---------- FOOTER ----------

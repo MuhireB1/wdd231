@@ -26,3 +26,4 @@ setupFooter();
 loadWeather();
 
 loadSpotlights();
+

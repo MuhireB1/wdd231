@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./dialog.css">
+    <script src="./dialog.js" defer></script>
+</head>
+<body>
+   <h1>Modals</h1>
+<p>This is an example of how to use classic modals with Javascript supportinguser behavior<br>
+Click the button below to open a modal newsletter sign-up form</p>
+<button class="openModal">Sign Up</button>
+
+<dialog id="modal">
+    <button type="button" id="closeModal">❌</button>
+    <h2>Newaletter</h2>
+    <p>Stay updated with our latest news and promotions by signing up for our newsletter</p>
+    <form class="form" method="dialog">
+        <label>Name<input type="text"></label><br>
+        <label>Email<input type="email"></label><br>
+        <button class="button" type="submit">Sign Up</button>
+    </form>
+</dialog>
+<hr>
+<p>This is an example of using HTML only <code>popover</code> 
+    to support the dialog.<br> Click the button below to open
+     a modal newsletter signup form.</p>
+     <button class="open-button" popovertarget="newsletter">SIgn Up</button>
+     <p>Note that the <code>popovertarget</code> attribute needs to point to the dialog element using its 
+        <code>id </code> attribute value to open and close the modal.</p>
+
+        <dialog class="modal" id="newsletter" popover>
+            <button class="close-button" popovertarget="newsletter" popovertargetaction="hide">❌</button>
+            <h2>Stake Trek</h2>
+            <h3>Volunteer SignUp</h3>
+            <form class="form" method="dialog">
+                <lebel>Name<input type="text" required></lebel><br>
+                <label>Phone<input type="tel" pattern="^\+?\d{1,4}?\s?(\(?\d{3}\)?\s?-?\s?\d{3}\s?-?\s?\d{4})$" placeholder="+1 555-123-4567"></label><br>
+                <button type="submit" class="button">Sign Up</button>
+            </form>
+        </dialog>
+</body>
+</html>

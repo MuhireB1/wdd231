@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover local businesses, services, events, and opportunities through the Kigali Chamber of Commerce.">
+    <meta name="keywords" content="Kigali Chamber of Commerce, Rwanda businesses, local businesses, business directory, chamber members, business services, Kigali business community">
+    <meta name="author" content="Muhire Bienvenue">
+    <link rel="icon" href="images/favicon.ico">
+    <title>Kigali Chamber of Commerce | Business & Community</title>
+
+    <meta property="og:title" content="Kigali Chamber of Commerce | Business and Community">
+    <meta property="og:description" content="Connect with local businesses, discover opportunities, and explore resources supporting Kigali's business community.">
+    <meta property="og:image" content="https://muhireb1.github.io/wdd231/chamber/index.html">
+    <meta property="og:url" content="https://example.com/directory">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Chamber Directory">
+    <meta property="twitter:description" content="Connect with local businesses, discover opportunities, and explore resources supporting Kigali's business community.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <script src="scripts/join.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="images/logo.svg" alt="Chamber Logo" class="logo">
+        <span>KIGALI CHAMBER OF COMMERCE</span>
+        <button
+            id="nav-button"
+            class="hamburger"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="primary-navigation">
+        </button>
+    </header>
+    <nav>
+        <ul id="primary-navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li class="class" aria-current="page"><a href="join.html">Join</a></li>
+            <li><a href="discover.html">Discover</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Join Our Community</h1><hr>
+        <section class="membership-container">
+
+    <!-- Membership Form -->
+    <section id="form">
+        <h2>Join the Chamber</h2>
+
+        <form class="form" action="thankyou.html" method="get">
+
+            <label>
+                First Name
+                <input
+                    type="text"
+                    name="firstName"
+                    required
+                    autocomplete="given-name"
+                >
+            </label>
+
+            <label>
+                Last Name
+                <input
+                    type="text"
+                    name="lastName"
+                    required
+                    autocomplete="family-name"
+                >
+            </label>
+
+            <label>
+                Organizational Title
+                <input
+                    type="text"
+                    name="title"
+                    autocomplete="organization-title"
+                    pattern="[A-Za-zÀ-ÿ\s-]{7,}"
+                    title="Please enter at least 7 characters."
+                >
+            </label>
+
+            <label>
+                Email
+                <input
+                    type="email"
+                    name="email"
+                    required
+                    autocomplete="email"
+                    placeholder="example@gmail.com"
+                >
+            </label>
+
+            <label>
+                Phone Number
+                <input
+                    type="tel"
+                    name="phone"
+                    required
+                    autocomplete="tel"
+                >
+            </label>
+
+            <label>
+                Business/Organization Name
+                <input
+                    type="text"
+                    name="organizationName"
+                    required
+                    autocomplete="organization"
+                >
+            </label>
+
+            <label>
+                Membership Level
+                <select name="membership" required>
+                    <option value="">--- Select ---</option>
+                    <option value="NP">NP Membership</option>
+                    <option value="Bronze">Bronze Membership</option>
+                    <option value="Silver">Silver Membership</option>
+                    <option value="Gold">Gold Membership</option>
+                </select>
+            </label>
+
+            <label>
+                Business/Organization Description
+                <textarea
+                    name="organizationDescription"
+                    rows="5"
+                ></textarea>
+            </label>
+
+            <input
+                type="hidden"
+                name="timestamp"
+                id="timestamp"
+            >
+
+            <button type="submit">Join</button>
+
+        </form>
+    </section>
+
+
+    <!-- Membership Cards -->
+    <section class="membership-levels">
+
+        <h2>Membership Levels</h2>
+
+        <!-- NP -->
+        <article class="membership-card">
+            <h3>NP Membership</h3>
+            <p>For nonprofit organizations.</p>
+            <p class="price">Free</p>
+
+            <button type="button" class="modal-link" data-modal="np-modal">
+                More Information
+            </button>
+        </article>
+
+
+        <!-- Bronze -->
+        <article class="membership-card">
+            <h3>Bronze Membership</h3>
+            <p>Essential benefits for growing businesses.</p>
+            <p class="price">$100 / year</p>
+
+            <button type="button" class="modal-link" data-modal="bronze-modal">
+                More Information
+            </button>
+        </article>
+
+
+        <!-- Silver -->
+        <article class="membership-card">
+            <h3>Silver Membership</h3>
+            <p>More exposure and opportunities for your business.</p>
+            <p class="price">$250 / year</p>
+
+            <button type="button" class="modal-link" data-modal="silver-modal">
+                More Information
+            </button>
+        </article>
+
+
+        <!-- Gold -->
+        <article class="membership-card">
+            <h3>Gold Membership</h3>
+            <p>Premium benefits and maximum visibility.</p>
+            <p class="price">$500 / year</p>
+
+            <button type="button" class="modal-link" data-modal="gold-modal">
+                More Information
+            </button>
+        </article>
+
+    </section>
+    <!-- NP Membership Modal -->
+<dialog id="np-modal">
+    <h2>NP Membership Benefits</h2>
+
+    <ul>
+        <li>Free membership</li>
+        <li>Access to chamber networking events</li>
+        <li>Business development resources</li>
+        <li>Access to training opportunities</li>
+        <li>Community networking opportunities</li>
+    </ul>
+
+    <button type="button" class="close-modal">Close</button>
+</dialog>
+
+
+<!-- Bronze Membership Modal -->
+<dialog id="bronze-modal">
+    <h2>Bronze Membership Benefits</h2>
+
+    <ul>
+        <li>All NP Membership benefits</li>
+        <li>Business listing in the chamber directory</li>
+        <li>Discounts on selected chamber events</li>
+        <li>Access to selected training sessions</li>
+        <li>Networking opportunities</li>
+    </ul>
+
+    <button type="button" class="close-modal">Close</button>
+</dialog>
+
+
+<!-- Silver Membership Modal -->
+<dialog id="silver-modal">
+    <h2>Silver Membership Benefits</h2>
+
+    <ul>
+        <li>All Bronze Membership benefits</li>
+        <li>Greater discounts on chamber events</li>
+        <li>Priority access to selected training</li>
+        <li>Business advertising opportunities</li>
+        <li>Featured business spotlight opportunities</li>
+    </ul>
+
+    <button type="button" class="close-modal">Close</button>
+</dialog>
+
+
+<!-- Gold Membership Modal -->
+<dialog id="gold-modal">
+    <h2>Gold Membership Benefits</h2>
+
+    <ul>
+        <li>All Silver Membership benefits</li>
+        <li>Premium advertising opportunities</li>
+        <li>Priority business spotlight placement</li>
+        <li>Exclusive networking events</li>
+        <li>Maximum discounts on chamber events</li>
+        <li>Special promotional opportunities</li>
+    </ul>
+
+    <button type="button" class="close-modal">Close</button>
+</dialog>
+    </main>
+
+<footer>
+    <!-- Contact Information -->
+    <section class="contact-info">
+        <h3>Contact Information</h3>
+
+        <p>
+            123 Main Street<br>
+            Kigali, Rwanda
+        </p>
+
+        <p>
+            Email:
+            <a href="mailto:info@chamber.org">info@chamber.org</a>
+        </p>
+
+        <p>
+            Phone:
+            <a href="tel:+250123456789">+250 123 456 789</a>
+        </p>
+    </section>
+
+
+    <!-- Social Links -->
+    <section class="social-links">
+        <h3>Follow Us</h3>
+
+        <ul>
+            <li>
+                <a
+                    href="https://www.linkedin.com/company/chamber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Follow us on LinkedIn"
+                >
+                    <img
+                        src="images/linkedin.svg"
+                        alt="LinkedIn"
+                    >
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="https://github.com/chamber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Follow us on GitHub"
+                >
+                    <img
+                        src="images/github.svg"
+                        alt="GitHub"
+                    >
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="https://twitter.com/chamber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Follow us on Twitter"
+                >
+                    <img
+                        src="images/twitter.svg"
+                        alt="Twitter"
+                    >
+                </a>
+            </li>
+        </ul>
+    </section>
+
+
+    <!-- Footer Information -->
+    <section class="footer-bottom">
+
+        <p>
+            &copy; <span id="copyright-year"></span> 🌺 MUHIRE BIENVENUE 🌺 WDD 231
+        </p>
+
+        <span>
+            Last Modified:
+            <span id="last-modified"></span>
+        </span>
+
+    </section>
+
+</footer>
+</body>
+</html>

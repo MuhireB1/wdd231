@@ -185,3 +185,25 @@ document.querySelector('#wddBtn').addEventListener('click', () => {
 
 // Display all courses when the page first loads
 displayCourses(courses);
+
+const courseDetails = document.querySelector("#course-details");
+function displayCourseDetails(courses) {
+    courseDetails.innerHTML = "";
+    courseDetails.innerHTML = `
+    <button id ="closeModal">❌</button>
+    <h2>${courses.subject} ${courses.number}</h2>
+    <h3>${courses.title}</h3>
+    <p><strong>Credits</strong>: ${courses.credits}
+    <p><strong>Certificate</strong>: ${courses.certificate}
+    <p>${courses.description}</p>
+    <p><strong>Technologies</strong> ${courses.technology.join(",")}</p>`;
+
+    courseDetails.showModal();
+    closeModal.addEventListener("click", () => {
+        courseDetails.close();
+    });
+}
+
+document.querySelector("#courseList").addEventListener("click", () => {
+    displayCourseDetails(courses);
+});

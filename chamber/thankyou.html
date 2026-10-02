@@ -24,12 +24,12 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/large.css">
     <link rel="stylesheet" href="styles/normalize.css">
-    <script type="module" src="scripts/main.mjs"></script>
+    <script type="module" src="scripts/thankyou.mjs"></script>
 </head>
 <body>
     <header>
         <img src="images/logo.svg" alt="Chamber Logo" class="logo">
-        <span>CHAMBER OF COMMERCE</span>
+        <span>KIGALI CHAMBER OF COMMERCE</span>
         <button
             id="nav-button"
             class="hamburger"
@@ -40,59 +40,38 @@
     </header>
     <nav>
         <ul id="primary-navigation">
-            <li class="active" aria-current="page"><a href="home.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="directory.html">Directory</a></li>
             <li><a href="join.html">Join</a></li>
             <li><a href="discover.html">Discover</a></li>
         </ul>
     </nav>
-    <main>
-        <h1>Kigali Chamber of Commerce | Business & Community</h1><hr
-        <section class="hero-image">
-        <picture>
-            <source srcset="images/hero-small.webp" media="(max-width: 600px)">
-            <source srcset="images/hero-medium.webp" media="(max-width: 1024px)">
-            <img src="images/hero-large.webp" alt="Kigali Center of Business" height="900" width="1600" fetchpriority="high">
-        </picture>
-        <div class="hero-content">
-            <h2>Connect. Grow. Prosper.</h2>
+     <main class="thank-you">
+
+        <section class="thank-you-card">
+
+            <h1>Thank You for Joining!</h1>
 
             <p>
-                Supporting businesses and strengthening
-                Kigali's business community.
+                Thank you for submitting your membership application
+                to the Kigali Chamber of Commerce.
             </p>
 
-            <a href="join.html" class="join-button">
-                Join the Chamber
+            <h2>Your Submitted Information</h2>
+
+            <div id="form-data">
+                <!-- JavaScript inserts the information here -->
+            </div>
+
+            <a href="index.html" class="return-home">
+                Return to Home
             </a>
-        </div>
 
-    </section>
+        </section>
 
-        <!-- CURRENT EVENTS -->
-    <section id="current-events" class="content-card">
-        <h2>Current Events</h2>
-
-        <div class="events-container">
-            <!-- Events will be added here -->
-        </div>
-    </section>
-
-
-    <!-- WEATHER -->
-    <section id="weather" class="content-card">
-        <h2>Weather</h2>
-    </section>
-
-
-    <!-- BUSINESS SPOTLIGHTS -->
-    <section id="spotlights" class="content-card">
-        <h2>Business Spotlights</h2>
-
-        <!-- JavaScript will insert spotlight cards here -->
-    </section>
     </main>
-    <footer>
+
+<footer>
     <!-- Contact Information -->
     <section class="contact-info">
         <h3>Contact Information</h3>
