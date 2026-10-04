@@ -142,11 +142,15 @@ function displayCourses(courseArray) {
             courseCard.classList.add('completed');
         }
 
-        courseCard.innerHTML = `
-            <h3>${course.subject} ${course.number}</h3>
-            <p>${course.title}</p>
-            <p>${course.credits} credits</p>
-        `;
+        courseCard.innerHTML =  `
+        <button class="course-button" type="button">
+        <h3>${course.subject} ${course.number}</h3>
+        <p>${course.title}</p>
+        <p>${course.credits} credits</p>
+        </button>`;
+
+        // store course number on the card
+        courseCard.dataset.courseNumber = course.number;
 
         courseList.appendChild(courseCard);
     });
@@ -186,24 +190,41 @@ document.querySelector('#wddBtn').addEventListener('click', () => {
 // Display all courses when the page first loads
 displayCourses(courses);
 
+
+// Modal
 const courseDetails = document.querySelector("#course-details");
-function displayCourseDetails(courses) {
-    courseDetails.innerHTML = "";
+function displayCourseDetails(course) {
+
     courseDetails.innerHTML = `
     <button id ="closeModal">❌</button>
-    <h2>${courses.subject} ${courses.number}</h2>
-    <h3>${courses.title}</h3>
-    <p><strong>Credits</strong>: ${courses.credits}
-    <p><strong>Certificate</strong>: ${courses.certificate}
-    <p>${courses.description}</p>
-    <p><strong>Technologies</strong> ${courses.technology.join(",")}</p>`;
+    <h2>${course.subject} ${course.number}</h2>
+    <h3>${course.title}</h3>
+    <p><strong>Credits</strong>: ${course.credits}
+    <p><strong>Certificate</strong>: ${course.certificate}
+    <p>${course.description}</p>
+    <p><strong>Technologies</strong> ${course.technology.join(",")}</p>`;
 
     courseDetails.showModal();
     closeModal.addEventListener("click", () => {
         courseDetails.close();
     });
-}
+};
 
-document.querySelector("#courseList").addEventListener("click", () => {
-    displayCourseDetails(courses);
+courseList.addEventListener("click", (event) => {
+
+    const card = event.target.closest(".course-card");
+
+    if (!card) {
+        return;
+    }
+
+    const courseNumber = Number(card.dataset.courseNumber);
+
+    const selectedCourse = courses.find(
+        course => course.number === courseNumber
+    );
+
+    if (selectedCourse) {
+        displayCourseDetails(selectedCourse);
+    }
 });

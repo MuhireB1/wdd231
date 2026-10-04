@@ -7,7 +7,7 @@
     /* ---------- HEADER ---------- */
 
     header {
-        padding: 1rem 3rem;
+        padding: 1rem 2rem;
     }
 
     header span {
@@ -21,11 +21,8 @@
     /* ---------- NAVIGATION ---------- */
 
     nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        padding: 0 3rem;
+        display: block;
+        width: 100%;
     }
 
     nav h1 {
@@ -37,26 +34,27 @@
 
         flex-direction: row;
 
-        align-items: stretch;
-        justify-content: flex-end;
-
-        gap: 0.3rem;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
 
     nav li {
         width: auto;
+        border-bottom: none;
     }
 
     nav a {
         border-top: none;
 
-        padding: 1rem 1.2rem;
+        padding: 1rem 1.5rem;
 
         transition:
             background-color 0.2s ease,
             color 0.2s ease,
             transform 0.2s ease;
     }
+    
 
     nav a:hover {
         padding-left: 1.2rem;

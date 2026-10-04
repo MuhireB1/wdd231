@@ -92,11 +92,14 @@ header span {
    HAMBURGER BUTTON
 ========================================= */
 
+/* =========================================
+   HAMBURGER BUTTON
+========================================= */
+
 .hamburger {
     position: relative;
 
     flex: 0 0 44px;
-
     width: 44px;
     height: 44px;
 
@@ -110,8 +113,7 @@ header span {
 }
 
 
-/* Top and bottom lines */
-
+/* Hamburger top line */
 .hamburger::before {
     content: "";
 
@@ -120,17 +122,17 @@ header span {
     left: 50%;
 
     width: 24px;
-    height: 16px;
+    height: 2px;
 
-    border-top: 2px solid var(--text-color);
-    border-bottom: 2px solid var(--text-color);
+    background-color: var(--text-color);
 
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -8px);
+
+    transition: transform 0.3s ease;
 }
 
 
-/* Middle line */
-
+/* Hamburger bottom line */
 .hamburger::after {
     content: "";
 
@@ -143,7 +145,21 @@ header span {
 
     background-color: var(--text-color);
 
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 6px);
+
+    transition: transform 0.3s ease;
+}
+
+/* =========================================
+   HAMBURGER OPEN STATE - X
+========================================= */
+
+.hamburger[aria-expanded="true"]::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.hamburger[aria-expanded="true"]::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .hamburger:hover {
@@ -166,7 +182,6 @@ header span {
 
 nav {
     display: none;
-
     width: 100%;
     background-color: var(--primary-color);
 }
@@ -187,7 +202,7 @@ nav ul {
 }
 
 nav li {
-    width: 50%;
+    width: 100%;
     margin: 0;
     padding: 0;
 
@@ -426,19 +441,47 @@ h2 {
 
 .courseList {
     display: grid;
-
-    grid-template-columns: 1fr;
-
-    gap: var(--space-md);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
 
     width: 100%;
-
     margin: 0;
     padding: 0;
 
     list-style: none;
 }
 
+.course-button {
+    width: 100%;
+    min-height: 150px;
+
+    padding: var(--space-lg);
+
+    border: none;
+    border-radius: 6px;
+
+    background: transparent;
+    color: inherit;
+
+    font: inherit;
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.course-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.course-card:focus-within {
+    outline: 3px solid var(--h2-border-color);
+    outline-offset: 2px;
+}
+
+.course-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
 /* =========================================
    COURSE CARDS
@@ -646,13 +689,34 @@ footer span {
     }
 }
 
-dialog[open] {
-  background-color: beige;
-  border-radius: 10px;
-  border: 1px solid rgb(0 0 0 / 0.1);
-}
- 
+dialog {
+    width: min(90%, 600px);
+    max-height: 80vh;
 
-::backdrop {
-    background-color: rgb (32 233 452/.3)
+    padding: 2rem;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: white;
+    color: #222;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.55);
+}
+
+#closeModal {
+    display: block;
+
+    margin-left: auto;
+    margin-bottom: 1rem;
+
+    border: none;
+    background: transparent;
+
+    font-size: 1.2rem;
+    cursor: pointer;
 }

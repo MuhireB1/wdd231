@@ -86,7 +86,6 @@ header span {
 .hamburger {
     width: 45px;
     height: 40px;
-
     position: relative;
 
     border: 2px solid var(--primary);
