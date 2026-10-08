@@ -374,3 +374,37 @@
 
 }
 
+
+@media screen and (max-width: 600px) {
+
+    .hero-values {
+        gap: 0.7rem;
+    }
+
+    .hero-value {
+        min-width: 70px;
+    }
+
+    .hero-value span {
+        font-size: 1.1rem;
+    }
+
+    .hero-value img {
+        width: 32px;
+        height: 32px;
+        margin-top: 0.35rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .hero {
+        height: auto;
+        min-height: 0;
+    }
+
+    .hero picture img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}

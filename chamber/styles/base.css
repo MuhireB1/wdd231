@@ -83,6 +83,7 @@ header span {
 }
 
 /* ---------- HAMBURGER ---------- */
+
 .hamburger {
     width: 45px;
     height: 40px;
@@ -93,13 +94,9 @@ header span {
 
     background: transparent;
     cursor: pointer;
-
-    transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease;
 }
 
-/* Hamburger middle line */
+/* Three hamburger lines */
 .hamburger::before {
     content: "";
     position: absolute;
@@ -107,10 +104,10 @@ header span {
     width: 23px;
     height: 3px;
 
-    background-color: var(--primary);
-
     left: 50%;
     top: 50%;
+
+    background-color: var(--primary);
 
     transform: translate(-50%, -50%);
 
@@ -121,6 +118,42 @@ header span {
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
+}
+
+/* Change hamburger to X */
+.hamburger[aria-expanded="true"]::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+
+    box-shadow:
+        0 0 0 transparent,
+        0 0 0 transparent;
+}
+
+/* Create second diagonal for X */
+.hamburger::after {
+    content: "";
+    position: absolute;
+
+    width: 23px;
+    height: 3px;
+
+    left: 50%;
+    top: 50%;
+
+    background-color: var(--primary);
+
+    transform: translate(-50%, -50%) rotate(0deg);
+
+    opacity: 0;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.hamburger[aria-expanded="true"]::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 /* Hamburger hover */
@@ -556,11 +589,11 @@ main {
     width: 100%;
 }
 
-.hero-image img {
+.hero img {
     display: block;
     width: 100%;
-    height: 350px;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
 }
 
 .hero-content {
@@ -910,19 +943,25 @@ main {
 }
 
 
-/* ==============================
+/* =========================================
    MODALS
-================================= */
+========================================= */
 
 dialog {
-    width: min(50%, 500px);
+    width: min(90%, 500px);
+    max-height: 85vh;
+    margin: auto;
     padding: 2rem;
-    border: none;
+
+    border: 1px solid var(--border);
     border-radius: 10px;
+
     background-color: var(--surface);
     color: var(--text-light);
+
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 
+    overflow-y: auto;
 }
 
 dialog::backdrop {
@@ -931,6 +970,7 @@ dialog::backdrop {
 
 dialog h2 {
     color: var(--primary);
+    margin-top: 0;
 }
 
 dialog li {
@@ -940,11 +980,15 @@ dialog li {
 .close-modal {
     margin-top: 1rem;
     padding: 0.7rem 1.2rem;
+
     border: none;
     border-radius: 5px;
+
     cursor: pointer;
+
     background-color: var(--primary);
     color: #121111;
+
     font-weight: bold;
 }
 
@@ -1193,4 +1237,34 @@ dialog li {
 
 .return-home:hover {
     background-color: var(--primary-dark);
+}
+
+.hero-values {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-value {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 80px;
+}
+
+.hero-value span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.2;
+}
+
+.hero-value img {
+    width: 42px;
+    height: 42px;
+    margin-top: 0.5rem;
+    object-fit: contain;
 }
