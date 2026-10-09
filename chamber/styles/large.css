@@ -408,3 +408,10 @@
         object-fit: contain;
     }
 }
+
+@media only screen and (min-width: 64rem) {
+    #all-places div{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
