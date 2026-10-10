@@ -6,8 +6,8 @@
     #all-places .place-card {
         grid-template-areas:
             "photo name"
-            "photo address"
             "photo description"
+            "photo address"
             "photo button";
         grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
         column-gap: 1rem;
