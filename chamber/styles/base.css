@@ -1281,7 +1281,9 @@ dialog li {
         "name"
         "photo"
         "address"
-        "description";
+        "description"
+        "button"
+        ;
 }
 
 #all-places div h2 {
@@ -1296,10 +1298,43 @@ dialog li {
 
 #all-places div img {
     width: 100%;
+    height: auto;
     grid-area: photo;
+    aspect-ratio: 3/2;
 }
 
 #all-places div address {
     margin: 1rem 10px;
     grid-area: address;
+}
+
+/* Learn More button on Discover cards */
+#all-places div button {
+    grid-area: button;
+    display: inline-block;
+    width: fit-content;
+    max-width: 100%;
+    min-height: 44px;
+    padding: 12px 24px;
+    margin: 0.5rem 10px;
+    background-color: var(--primary);
+    color: #121111;
+    border: 0px solid var(--primary);
+    border-radius: 4px;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+#all-places div button:hover {
+    background-color: var(--primary-dark);
+    color: #fff;
+}
+
+
+@font-face {
+    font-family: Roboto;
+    display: swap;
 }
