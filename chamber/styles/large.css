@@ -410,28 +410,25 @@
 }
 
 
-@media only screen and (min-width: 64rem) {
+@media (min-width: 64rem) {
     #all-places {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1.5rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 1rem;
+        grid-template-columns: repeat(2, minmax(1fr, 1fr));
     }
 
-    #all-places > h1,
-    #all-places > .visit-message {
-        grid-column: 1 / -1;
+    #all-places .place-card {
+        grid-template-areas:
+            "name"
+            "photo"
+            "address"
+            "description"
+            "button";
+        grid-template-columns: minmax(0, 1fr);
     }
 
-    #all-places > div {
-        margin: 0;
-        min-width: 0;
-    }
-
-    #all-places > div img {
+    #all-places .place-card img {
         width: 100%;
-        object-fit: cover;
+        height: auto;
+        aspect-ratio: 3 / 2;
+        min-height: 0;
     }
 }

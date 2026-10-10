@@ -7,37 +7,51 @@ const showHere = document.querySelector("#all-places");
 
 // Loop through the places array and create a card for each place
 function displayPlaces() {
-    places.forEach(place => {
-        // build card element
-        const card = document.createElement("div");
-        //Build photo elememnt
+    if (!showHere) return;
+
+    const fragment = document.createDocumentFragment();
+
+    places.forEach((place, index) => {
+        const card = document.createElement("article");
+        card.className = "place-card";
+
         const photo = document.createElement("img");
         photo.src = place["image-url"];
         photo.alt = place.name;
         photo.width = 300;
         photo.height = 200;
-        
-        card.appendChild(photo);
-        // build the title
+        photo.decoding = "async";
+
+        if (index === 0) {
+            photo.loading = "eager";
+            photo.fetchPriority = "high";
+        } else {
+            photo.loading = "lazy";
+        }
+
         const title = document.createElement("h2");
-        title.innerHTML = place.name;
-        card.appendChild(title);
-        // build address
+        title.textContent = place.name;
+
         const address = document.createElement("p");
-        address.innerHTML = place.address;
-        card.appendChild(address);
-        // build description
-        const description = document.createElement("address");
-        description.innerHTML = place.description;
-        card.appendChild(description);
-        // Create button
-        const btn = document.createElement("button");
-        btn.innerHTML = `<button class ="btn">Learn More</button>`;
-        card.appendChild(btn); 
-        // append the card to the container
-        showHere.appendChild(card);
+        address.className = "place-address";
+        address.textContent = place.address;
+
+        const description = document.createElement("p");
+        description.className = "place-description";
+        description.textContent = place.description;
+
+        const button = document.createElement("button");
+        button.className = "btn";
+        button.type = "button";
+        button.textContent = "Learn More";
+
+        // Preserve the existing design while avoiding nested buttons.
+        card.append(photo, title, address, description, button);
+        fragment.appendChild(card);
     });
-};
+
+    showHere.appendChild(fragment);
+}
 
 displayPlaces();
 
