@@ -37,7 +37,7 @@ export const places = [
   {
     "name": "Nyamirambo Women’s Center",
     "description": "A community-focused social enterprise offering cultural experiences, traditional cooking activities, local crafts, and fashion products.",
-    "image-url": "images/nyamirambo-womens-center.webp",
+    "image-url": "images/nyamirambo-women.webp",
     "address": "KN 7 Avenue, Nyamirambo, Kigali, Rwanda",
     "cost": "$25 USD"
   },
