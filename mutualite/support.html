@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Unity, harmony and love. Participate in the community builing of extending love to each other">
+    <meta name="description" content="Support Mutualité's community programs with a donation or a pledge to help neighbors share resources and opportunities.">
     <meta name="author" content="Muhire Bienvenue">
-    <meta name="keywords" content="love, unity, togetherness and purpose">
+    <meta name="keywords" content="donate, support community programs, mutual aid, charitable giving, Mutualité">
+    <meta name="theme-color" content="#12372A">
     <link rel="icon" href="./images/favicon.ico">
-    <title>Mutualite</title>
+    <title>Support Our Community | Mutualité</title>
 
     <!--Meta tags for SEO on facebook and twitter-->
-    <meta property="og:title" content="Mutualite">
-    <meta property="og:description" content="Unity, harmony and love. Participate in the community builing of extending love to each other">
-    <meta property="og:image" content="https://example.com/image.jpg">
-    <meta property="og:url" content="https://example.com/mutualite">
+    <meta property="og:title" content="Support Our Community | Mutualité">
+    <meta property="og:description" content="Choose a community program and share a donation pledge to help people thrive together.">
+    <meta property="og:image" content="./images/large.webp">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mutualité">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Support Our Community | Mutualité">
+    <meta name="twitter:description" content="Help strengthen community programs through mutual support and charitable giving.">
+    <meta name="twitter:image" content="./images/large.webp">
 
     <!-- Google fonts for layout-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kablammo&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <!-- Stylesheet links for Layout-->
     <link rel="stylesheet" href="./styles/normalize.css">
@@ -39,18 +41,74 @@
             class="hamburger"
             aria-label="Open navigation menu"
             aria-expanded="false"
-            aria-controls="primary-navigation">
+            aria-controls="navigation">
         </button>
     </header>
     <nav id="navigation">
         <ul>
             <li><a href="./index.html">Home</a></li>
             <li><a href="./about.html">About</a></li>
-            <li class="active" aria-current="page"><a href="./donate.html">Donate</a></li>
+            <li class="active" aria-current="page"><a href="./support.html">Support</a></li>
         </ul>
     </nav>
     <main>
-        <h1></h1>
+        <h1>Support our community</h1>
+        <p class="lead page-intro">Your generosity helps neighbors share resources, build practical skills, and create opportunities that last.</p>
+
+        <section class="support-layout" aria-labelledby="support-heading">
+            <div class="support-copy">
+                <span class="section-label">Make a difference</span>
+                <h2 id="support-heading">Give in a way that feels right for you</h2>
+                <p>Choose a program to support, make a one-time contribution, or set up a monthly pledge. Every gift strengthens a community-led effort.</p>
+                <ul>
+                    <li>Support locally led programs and shared resources.</li>
+                    <li>Help people access skills, care, and new opportunities.</li>
+                    <li>Give what works for you; every contribution matters.</li>
+                </ul>
+                <p class="form-note">This demonstration form records your intention to give. It does not process a payment or collect financial details.</p>
+            </div>
+
+            <form class="support-form" method="get" action="./thankyou.html">
+                <h2>Donation pledge</h2>
+                <div class="form-fields">
+                    <label for="first-name">First name
+                        <input id="first-name" name="FirstName" title="Enter first name" type="text" autocomplete="given-name" required>
+                    </label>
+                    <label for="last-name">Last name
+                        <input id="last-name" name="LastName" title="Enter last name" type="text" autocomplete="family-name" required>
+                    </label>
+                    <label for="email">Email address
+                        <input id="email" name="email" type="email" title="Enter email address" autocomplete="email" required>
+                    </label>
+                    <label for="donation-amount">Contribution amount (RWF)
+                        <input id="donation-amount" name="DonationAmount" type="number" min="500" step="500" inputmode="numeric" required>
+                    </label>
+                    <label for="program">Program to support
+                        <select id="program" name="Program" required>
+                            <option value="" selected disabled>Choose a program</option>
+                            <option value="Community Resource Exchange">Community Resource Exchange</option>
+                            <option value="Skills &amp; Mentorship Circle">Skills &amp; Mentorship Circle</option>
+                            <option value="Mutual Savings &amp; Opportunity Fund">Mutual Savings &amp; Opportunity Fund</option>
+                            <option value="Community Gardens Network">Community Gardens Network</option>
+                            <option value="Peer-to-Peer Care Collective">Peer-to-Peer Care Collective</option>
+                            <option value="Emergency Mutual Aid Fund">Emergency Mutual Aid Fund</option>
+                            <option value="Where needed most">Where needed most</option>
+                        </select>
+                    </label>
+                    <p id="program-preference-status" class="preference-note form-wide" role="status" aria-live="polite">Your choice will be saved on this device when you select a program.</p>
+                    <label for="frequency">Pledge frequency
+                        <select id="frequency" name="Frequency" required>
+                            <option value="One-time" selected>One-time</option>
+                            <option value="Monthly">Monthly</option>
+                        </select>
+                    </label>
+                    <label class="form-wide" for="message">Note (optional)
+                        <textarea id="message" name="Message" rows="3" maxlength="300" placeholder="Share what inspired your support"></textarea>
+                    </label>
+                </div>
+                <button class="call-to-action donate-button" type="submit">Donate</button>
+            </form>
+        </section>
     </main>
 <footer>
     <!-- Contact Information -->
@@ -128,6 +186,6 @@
 
     </section>
 </footer>
+    <script type="module" src="./scripts/main.js"></script>
 </body>
-<script type="module" src="./scripts/main.js"></script> 
 </html>

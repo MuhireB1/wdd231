@@ -1,0 +1,31 @@
+@media (min-width: 64rem) {
+  header,
+  main,
+  nav,
+  footer {
+    max-width: 1120px;
+  }
+
+  .programs-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .support-layout {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+
+  .support-form {
+    grid-column: auto;
+  }
+
+  .comments-grid,
+  .spotlight-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 80rem) {
+  .programs-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

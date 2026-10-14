@@ -29,4 +29,29 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     }
+
+}
+
+@media (min-width: 38rem) {
+  .programs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .comments-grid,
+  .spotlight-grid,
+  .support-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .support-form {
+    grid-column: 1 / -1;
+  }
+
+  .form-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .form-wide {
+    grid-column: 1 / -1;
+  }
 }

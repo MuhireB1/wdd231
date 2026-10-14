@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Unity, harmony and love. Participate in the community builing of extending love to each other">
+    <meta name="description" content="Discover Mutualité, a community-centered initiative connecting neighbors through shared resources, charitable giving, and mutual support.">
     <meta name="author" content="Muhire Bienvenue">
-    <meta name="keywords" content="love, unity, togetherness and purpose">
+    <meta name="keywords" content="Mutualité, community support, charity, donations, mutual aid, shared growth">
+    <meta name="theme-color" content="#12372A">
     <link rel="icon" href="./images/favicon.ico">
-    <title>Mutualite</title>
+    <title>Mutualité | Stronger Communities Together</title>
 
     <!--Meta tags for SEO on facebook and twitter-->
-    <meta property="og:title" content="Mutualite">
-    <meta property="og:description" content="Unity, harmony and love. Participate in the community builing of extending love to each other">
-    <meta property="og:image" content="https://example.com/image.jpg">
-    <meta property="og:url" content="https://example.com/mutualite">
+    <meta property="og:title" content="Mutualité | Stronger Communities Together">
+    <meta property="og:description" content="Discover community programs, shared resources, and ways to support people through mutual aid.">
+    <meta property="og:image" content="./images/large.webp">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mutualité">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mutualité | Stronger Communities Together">
+    <meta name="twitter:description" content="Every connection matters. Join a community built on shared resources and mutual support.">
+    <meta name="twitter:image" content="./images/large.webp">
 
     <!-- Google fonts for layout-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kablammo&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <!-- Stylesheet links for Layout-->
     <link rel="stylesheet" href="./styles/normalize.css">
@@ -39,7 +41,7 @@
             class="hamburger"
             aria-label="Open navigation menu"
             aria-expanded="false"
-            aria-controls="primary-navigation">
+            aria-controls="navigation">
         </button>
     </header>
     <nav id="navigation">
@@ -50,26 +52,68 @@
         </ul>
     </nav>
     <main>
-        <h1>Mutualite</h1>
-        <p>Welcome to the Mutualite project!</p>
+        <h1>Mutualité</h1>
+        <p>We grow stronger when we share what we have and support one another.</p>
         <section class="hero">
             <picture>
                 <source srcset="./images/small.webp" media="(max-width: 600px)">
                 <source srcset="./images/medium.webp" media="(max-width: 1024px)">
-                <img src="./images/large.webp" alt="hero image" height="900" width="1600" fetchpriority="high">
+                <img src="./images/large.webp" alt="Neighbors working together to build a caring community" height="900" width="1600" fetchpriority="high">
             </picture>
             <div class="hero-content">
                 <h2>Together, We Are Stronger</h2>
                 <p>Every connection matters. Every act of support makes a difference.<br> <strong>Join us in building a caring community through unity, solidarity, and shared growth</strong></p>
-                <button class="call-to-action">Join</button>
+                <button class="call-to-action" id="joinbtn">Join</button>
+
+                <dialog id="joinModal">
+                    <button id="closeModal"></button>
+                    <h2>Join Our Community</h2>
+                    <p>Welcome! Join us in building a caring community through unity, solidarity, and shared growth</p>
+                    <form id="joinForm" method="get" action="thankyou.html">
+                        <label>First Name:<input type="text" name="FirstName" title="firstName" required autocomplete="family-name" placeholder="Enter First Name">
+                        Last Name: <input type="text" name="LastName" title="lastName" autocomplete="given-name" required placeholder="Entre Last name">
+                        Email: <input type="email" name="email" title="email" autocomplete="email" required placeholder="...@gmail.com">
+                        Contact: <input type="tel" name="tel" autocomplete="tel" title="tel" required></label>
+                        <fieldset>
+                <legend>Which category do you fall into?</legend>
+
+                <label>
+                    <input type="radio" name="Membership" value="diaspora" required>
+                    Diaspora
+                </label>
+
+                <label>
+                    <input type="radio" name="Membership" value="Native" required>
+                    Native
+                </label>
+            </fieldset>
+            <button type="submit" id="modalSubmit">Join Us</button>
+                    </form>
+                </dialog>
+                <dialog id="formInfoModal" aria-labelledby="formInfoTitle">
+                    <h2 id="formInfoTitle">Welcome to the community</h2>
+                    <div id="submitInfo" aria-live="polite"></div>
+                    <button type="button" id="closeInfoModal">Close</button>
+                </dialog>
             </div>
         </section>
 
-        <section class="values">
-
+        <section class="top-comments" aria-labelledby="community-voices-title">
+            <h2 id="community-voices-title">Community voices</h2>
+            <p class="lead">Stories and reflections about generosity, charitable work, and neighbors supporting neighbors.</p>
+            <p id="comments-status" class="feed-status" role="status" aria-live="polite">Loading community stories…</p>
+            <div id="comment-cards" class="comments-grid"></div>
         </section>
         <section class="spotlight" id="spotlight">
-            <!--To be generated by Javascript-->
+            <h2>Programs making a difference</h2>
+            <p class="lead">These programs currently reach the most people each year.</p>
+            <p id="spotlight-status" class="feed-status" role="status" aria-live="polite">Loading program reach…</p>
+            <div id="spotlight-cards" class="spotlight-grid"></div>
+            <a class="call-to-action spotlight-support" href="./support.html">Support a program</a>
+        </section>
+        <section class="rwanda-weather" id="weather" aria-labelledby="weather-heading">
+            <h2 id="weather-heading">Rwanda weather</h2>
+            <p id="weather-status" class="feed-status" role="status" aria-live="polite">Loading current conditions…</p>
         </section>
     </main>
 <footer>
@@ -149,5 +193,5 @@
     </section>
 </footer>
 </body>
-<script type="module" src="./scripts/main.js"></script> 
+<script type="module" src="./scripts/main.js"></script>
 </html>

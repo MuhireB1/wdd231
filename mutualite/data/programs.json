@@ -1,0 +1,107 @@
+[
+  {
+    "program_name": "Community Resource Exchange",
+    "category": "Community Resilience",
+    "location": "Local neighborhoods",
+    "annual_beneficiaries": 1200,
+    "description": "A neighborhood network where members share tools, skills, spaces, and services to reduce costs and build everyday resilience."
+  },
+  {
+    "program_name": "Skills & Mentorship Circle",
+    "category": "Education & Employment",
+    "location": "Regional chapters",
+    "annual_beneficiaries": 850,
+    "description": "Peer-led workshops, mentoring, and career support that help members develop practical skills and access new opportunities."
+  },
+  {
+    "program_name": "Mutual Savings & Opportunity Fund",
+    "category": "Economic Empowerment",
+    "location": "Urban and rural communities",
+    "annual_beneficiaries": 640,
+    "description": "A transparent community fund supporting small enterprises, emergency needs, and locally identified opportunities."
+  },
+  {
+    "program_name": "Neighborhood Tool Library",
+    "category": "Shared Assets",
+    "location": "Citywide",
+    "annual_beneficiaries": 2100,
+    "description": "A shared library of tools and equipment that members can borrow for home repairs, gardening, events, and community projects."
+  },
+  {
+    "program_name": "Community Gardens Network",
+    "category": "Food Security",
+    "location": "Urban districts",
+    "annual_beneficiaries": 980,
+    "description": "Shared growing spaces that improve access to fresh food, strengthen local food systems, and bring neighbors together."
+  },
+  {
+    "program_name": "Peer-to-Peer Care Collective",
+    "category": "Health & Wellbeing",
+    "location": "Community health hubs",
+    "annual_beneficiaries": 720,
+    "description": "A reciprocal care network where members provide and receive practical support, companionship, and wellbeing check-ins."
+  },
+  {
+    "program_name": "Youth Leadership Lab",
+    "category": "Youth Development",
+    "location": "Schools and youth centers",
+    "annual_beneficiaries": 540,
+    "description": "A program that equips young people with leadership, civic engagement, and project-design skills through community-led initiatives."
+  },
+  {
+    "program_name": "Local Business Solidarity Network",
+    "category": "Enterprise Support",
+    "location": "Town centers",
+    "annual_beneficiaries": 310,
+    "description": "A cooperative network connecting local businesses to shared resources, joint purchasing, mentoring, and community visibility."
+  },
+  {
+    "program_name": "Digital Access & Literacy Program",
+    "category": "Digital Inclusion",
+    "location": "Libraries and community centers",
+    "annual_beneficiaries": 1500,
+    "description": "Device access, connectivity support, and digital skills training that help community members participate fully online."
+  },
+  {
+    "program_name": "Emergency Mutual Aid Fund",
+    "category": "Crisis Response",
+    "location": "Partner municipalities",
+    "annual_beneficiaries": 430,
+    "description": "A rapid-response fund providing practical and financial support to community members during unexpected hardship or crisis."
+  },
+  {
+    "program_name": "Housing Repair Cooperative",
+    "category": "Safe Housing",
+    "location": "Low-income neighborhoods",
+    "annual_beneficiaries": 260,
+    "description": "A member-led cooperative offering affordable repairs, maintenance skills, and safe-housing improvements for participating households."
+  },
+  {
+    "program_name": "Intergenerational Support Program",
+    "category": "Social Connection",
+    "location": "Residential communities",
+    "annual_beneficiaries": 680,
+    "description": "Activities that connect older and younger community members for mutual learning, companionship, and practical support."
+  },
+  {
+    "program_name": "Women’s Enterprise Circle",
+    "category": "Gender Equity",
+    "location": "Regional chapters",
+    "annual_beneficiaries": 390,
+    "description": "A supportive network helping women entrepreneurs access training, capital, mentorship, and collaborative business opportunities."
+  },
+  {
+    "program_name": "Climate Action Collective",
+    "category": "Environmental Sustainability",
+    "location": "Watershed communities",
+    "annual_beneficiaries": 820,
+    "description": "Community-led projects that reduce local environmental impact through energy savings, waste reduction, greening, and climate education."
+  },
+  {
+    "program_name": "Community Legal Navigation Service",
+    "category": "Access to Justice",
+    "location": "Partner legal clinics",
+    "annual_beneficiaries": 450,
+    "description": "Plain-language legal information, referrals, and navigation support that help residents understand and access their rights."
+  }
+]
