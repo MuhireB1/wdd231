@@ -1,0 +1,1017 @@
+For your Mutualité website, I recommend structuring the About page around the organization’s identity, mission, community initiatives, and impact, while the Donation page should focus on giving opportunities, transparent use of donations, and an interactive donation form.
+To satisfy your JavaScript assignment requirements, make both pages share a local JSON data source, ES modules, reusable card components, local storage, and an accessible modal dialog.
+1. Recommended website structure
+
+
+
+
+
+
+
+
+
+About Mutualité
+Tell visitors who you are, why you exist, what you do, and how you help the community.
+
+
+
+
+
+
+
+
+
+
+
+
+Support & Donations
+Show giving opportunities, explain funding needs, and let visitors select a cause and amount.
+
+
+
+About page layout
+1. Hero section
+“Together, We Are Stronger” + introduction + Join Us button
+
+2. Our Story
+Organization background and the community needs it addresses
+
+3. Mission, Vision & Values
+Unity, solidarity, care, inclusion, and shared growth
+
+4. Our Programs
+Dynamically generated program cards loaded from JSON
+
+5. Our Impact & Community Stories
+Statistics, initiatives, outcomes, and stories supported by real data
+
+6. Call to Action
+Join Mutualité · Volunteer · Support Our Work
+
+
+Dynamic features for About:
+- Load at least 15 program, initiative, or community activity records from JSON.
+- Display four or more properties per item, such as title, category, location, and description.
+- Add category filters and a search field.
+- Include a “Learn More” button opening an accessible modal with additional details.
+- Save the visitor’s preferred program category or display setting using localStorage.
+Donation page layout
+1. Donation Hero
+“Your Support Makes a Difference” + Donate Now button
+
+2. Why Your Support Matters
+Community needs and verified examples of how donations help
+
+3. Choose a Cause
+Dynamic cause cards fetched from JSON
+
+4. Donation Form
+Amount · Selected cause · Donor details · Frequency
+
+5. Giving Impact
+Show verified funding targets and progress where available
+
+6. Confirmation Dialog
+Review the donation details and confirm the next step
+
+
+Dynamic features for Donations:
+- Load 15 or more donation opportunities or giving-related records from JSON.
+- Display each cause’s name, category, target amount, and description, with other properties such as location or progress.
+- Allow filtering by cause category and selecting a donation amount.
+- Update the form summary when the visitor changes their amount or cause.
+- Use an accessible modal to review the donation before proceeding.
+- Store a draft donation preference locally, but never store payment card details in localStorage.
+Important: a front-end donation form does not actually collect money by itself. Real payments require a secure payment provider and a server-side integration. For a coursework demonstration, you can show a clearly labeled demo confirmation without claiming that a payment was completed.
+2. Recommended project folder structure
+Keep your existing Mutualité project and organize the new pages like this. The example uses scripts/ and data/ folders to separate JavaScript from content.
+mutualité/
+
+about.html
+
+donation.html
+
+data/
+
+initiatives.json
+
+scripts/
+
+main.js
+about.js
+donation.js
+initiatives.js
+
+styles/
+
+base.css
+large.css
+
+
+
+3. Data source: data/initiatives.json
+Use one JSON file containing 15 initiatives. Both pages can fetch the same data and display it differently. The records below are sample content for coursework; replace them with Mutualité’s verified programs, locations, and funding targets before publishing.
+
+[
+  {
+    "id": 1,
+    "title": "Family Support",
+    "category": "Welfare",
+    "location": "Community-wide",
+    "description": "Connect families with community support and essential resources.",
+    "targetAmount": 2000
+  },
+  {
+    "id": 2,
+    "title": "Youth Skills Development",
+    "category": "Education",
+    "location": "Community training centers",
+    "description": "Support practical skills training and youth opportunities.",
+    "targetAmount": 3500
+  },
+  {
+    "id": 3,
+    "title": "Community Health Awareness",
+    "category": "Health",
+    "location": "Local communities",
+    "description": "Promote health education and access to reliable information.",
+    "targetAmount": 2500
+  },
+  {
+    "id": 4,
+    "title": "School Materials",
+    "category": "Education",
+    "location": "Partner schools",
+    "description": "Help provide learning materials to children in need.",
+    "targetAmount": 1800
+  },
+  {
+    "id": 5,
+    "title": "Food Assistance",
+    "category": "Welfare",
+    "location": "Community distribution points",
+    "description": "Support food assistance for vulnerable households.",
+    "targetAmount": 3000
+  },
+  {
+    "id": 6,
+    "title": "Women Empowerment",
+    "category": "Livelihoods",
+    "location": "Community groups",
+    "description": "Encourage women's participation in skills and income activities.",
+    "targetAmount": 4000
+  },
+  {
+    "id": 7,
+    "title": "Elderly Care",
+    "category": "Welfare",
+    "location": "Community-wide",
+    "description": "Strengthen social support and inclusion for older people.",
+    "targetAmount": 2200
+  },
+  {
+    "id": 8,
+    "title": "Clean Water Awareness",
+    "category": "Environment",
+    "location": "Local communities",
+    "description": "Promote safe water handling and hygiene awareness.",
+    "targetAmount": 2800
+  },
+  {
+    "id": 9,
+    "title": "Environmental Action",
+    "category": "Environment",
+    "location": "Community spaces",
+    "description": "Encourage cleaner shared spaces and responsible environmental practices.",
+    "targetAmount": 1600
+  },
+  {
+    "id": 10,
+    "title": "Disability Inclusion",
+    "category": "Inclusion",
+    "location": "Community-wide",
+    "description": "Promote accessibility, participation, and equal opportunities.",
+    "targetAmount": 3200
+  },
+  {
+    "id": 11,
+    "title": "Digital Skills",
+    "category": "Education",
+    "location": "Training centers",
+    "description": "Introduce practical digital skills for learning and work.",
+    "targetAmount": 2700
+  },
+  {
+    "id": 12,
+    "title": "Emergency Relief",
+    "category": "Welfare",
+    "location": "As needs arise",
+    "description": "Prepare community support for urgent household needs.",
+    "targetAmount": 5000
+  },
+  {
+    "id": 13,
+    "title": "Small Business Skills",
+    "category": "Livelihoods",
+    "location": "Community groups",
+    "description": "Support entrepreneurship and basic business skills.",
+    "targetAmount": 3800
+  },
+  {
+    "id": 14,
+    "title": "Mental Wellbeing Awareness",
+    "category": "Health",
+    "location": "Community-wide",
+    "description": "Encourage supportive relationships and wellbeing awareness.",
+    "targetAmount": 2400
+  },
+  {
+    "id": 15,
+    "title": "Community Volunteer Network",
+    "category": "Inclusion",
+    "location": "Community-wide",
+    "description": "Connect volunteers with meaningful community activities.",
+    "targetAmount": 1500
+  }
+]
+
+
+
+Each record has six properties, exceeding the minimum of four properties per displayed item.
+4. Shared JavaScript module: scripts/initiatives.js
+This module fetches the JSON data, handles errors using try...catch, and generates cards using template literals. Both pages can import its functions.
+
+const DATA_URL = "./data/initiatives.json";
+
+export async function fetchInitiatives() {
+    try {
+        const response = await fetch(DATA_URL);
+
+        if (!response.ok) {
+            throw new Error(`Request failed: ${response.status}`);
+        }
+
+        const initiatives = await response.json();
+
+        if (!Array.isArray(initiatives)) {
+            throw new Error("The data format is invalid.");
+        }
+
+        return initiatives;
+    } catch (error) {
+        console.error("Could not load initiatives:", error);
+        throw error;
+    }
+}
+
+export function createInitiativeCard(item, buttonLabel = "Learn More") {
+    const card = document.createElement("article");
+    card.className = "initiative-card";
+
+    // Build the card safely using DOM methods.
+    const title = document.createElement("h3");
+    title.textContent = item.title;
+
+    const category = document.createElement("p");
+    category.textContent = `Category: ${item.category}`;
+
+    const location = document.createElement("p");
+    location.textContent = `Location: ${item.location}`;
+
+    const description = document.createElement("p");
+    description.textContent = item.description;
+
+    const target = document.createElement("p");
+    target.textContent =
+        `Funding target: $${item.targetAmount.toLocaleString("en-US")}`;
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "details-button";
+    button.textContent = buttonLabel;
+    button.dataset.id = item.id;
+
+    card.append(title, category, location, description, target, button);
+
+    return card;
+}
+
+export function renderInitiatives(container, items, buttonLabel) {
+    container.replaceChildren();
+
+    // Array method: forEach
+    items.forEach((item) => {
+        container.append(
+            createInitiativeCard(item, buttonLabel)
+        );
+    });
+}
+
+
+
+Using DOM methods and textContent to insert data helps prevent untrusted JSON text from being interpreted as HTML.
+5. About page: about.html
+The key dynamic section is #initiative-list. JavaScript will insert all 15 cards, while the search and category selector let visitors explore the content.
+
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Together, We Are Stronger</h1>
+            <p>
+                Every connection matters. Every act of support
+                makes a difference.
+            </p>
+            <a class="call-to-action" href="donation.html">
+                Support Our Work
+            </a>
+        </div>
+    </section>
+
+    <section class="about-intro">
+        <h2>About Mutualité</h2>
+        <p>
+            We believe in unity, solidarity, and community support.
+            Discover the initiatives that help bring people together.
+        </p>
+    </section>
+
+    <section class="programs">
+        <h2>Our Initiatives</h2>
+
+        <label for="program-search">Search initiatives</label>
+        <input
+            id="program-search"
+            type="search"
+            placeholder="Search by name or location"
+        >
+
+        <label for="category-filter">Filter by category</label>
+        <select id="category-filter">
+            <option value="all">All categories</option>
+        </select>
+
+        <p id="program-count" aria-live="polite"></p>
+        <p id="program-error" role="alert"></p>
+
+        <div id="initiative-list" class="initiative-grid"></div>
+    </section>
+
+    <dialog id="details-dialog" aria-labelledby="dialog-title">
+        <h2 id="dialog-title">Initiative Details</h2>
+        <div id="dialog-content"></div>
+        <button type="button" id="close-dialog">Close</button>
+    </dialog>
+</main>
+
+<script type="module" src="./scripts/about.js"></script>
+
+
+
+scripts/about.js
+This module loads the data, builds the category filter, searches initiatives, and opens a details modal.
+
+import {
+    fetchInitiatives,
+    renderInitiatives
+} from "./initiatives.js";
+
+const list = document.querySelector("#initiative-list");
+const search = document.querySelector("#program-search");
+const filter = document.querySelector("#category-filter");
+const count = document.querySelector("#program-count");
+const error = document.querySelector("#program-error");
+
+const dialog = document.querySelector("#details-dialog");
+const dialogTitle = document.querySelector("#dialog-title");
+const dialogContent = document.querySelector("#dialog-content");
+const closeDialog = document.querySelector("#close-dialog");
+
+let initiatives = [];
+
+function displayItems(items) {
+    renderInitiatives(list, items, "Learn More");
+    count.textContent = `${items.length} initiatives found.`;
+}
+
+function applyFilters() {
+    const term = search.value.trim().toLowerCase();
+    const category = filter.value;
+
+    const filtered = initiatives.filter((item) => {
+        const matchesSearch =
+            `${item.title} ${item.location} ${item.description}`
+                .toLowerCase()
+                .includes(term);
+
+        const matchesCategory =
+            category === "all" || item.category === category;
+
+        return matchesSearch && matchesCategory;
+    });
+
+    displayItems(filtered);
+}
+
+async function initializeAboutPage() {
+    try {
+        initiatives = await fetchInitiatives();
+
+        const categories = [
+            ...new Set(initiatives.map((item) => item.category))
+        ];
+
+        categories.forEach((category) => {
+            const option = document.createElement("option");
+            option.value = category;
+            option.textContent = category;
+            filter.append(option);
+        });
+
+        // Restore the visitor's category preference.
+        filter.value =
+            localStorage.getItem("mutualite-category") || "all";
+
+        if (!categories.includes(filter.value) &&
+            filter.value !== "all") {
+            filter.value = "all";
+        }
+
+        displayItems(initiatives);
+        applyFilters();
+    } catch {
+        error.textContent =
+            "Our initiatives could not be loaded. Please try again later.";
+    }
+}
+
+search.addEventListener("input", applyFilters);
+
+filter.addEventListener("change", () => {
+    localStorage.setItem("mutualite-category", filter.value);
+    applyFilters();
+});
+
+// Event delegation handles buttons on dynamically created cards.
+list.addEventListener("click", (event) => {
+    const button = event.target.closest(".details-button");
+
+    if (!button) return;
+
+    const item = initiatives.find(
+        (initiative) => initiative.id === Number(button.dataset.id)
+    );
+
+    if (!item) return;
+
+    dialogTitle.textContent = item.title;
+    dialogContent.replaceChildren();
+
+    [
+        `Category: ${item.category}`,
+        `Location: ${item.location}`,
+        item.description,
+        `Funding target: $${item.targetAmount.toLocaleString("en-US")}`
+    ].forEach((text) => {
+        const paragraph = document.createElement("p");
+        paragraph.textContent = text;
+        dialogContent.append(paragraph);
+    });
+
+    dialog.showModal();
+});
+
+closeDialog.addEventListener("click", () => dialog.close());
+
+dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) dialog.close();
+});
+
+initializeAboutPage();
+
+
+
+The native HTML <dialog> supports keyboard interaction and Escape-to-close behavior when opened with showModal(). The explicit Close button makes the interaction clear.
+6. Donation page: donation.html
+This page uses the same initiative data to display funding opportunities. Visitors can select a cause, choose an amount, and review a draft before proceeding.
+
+<main>
+    <section class="donation-hero">
+        <h1>Your Support Makes a Difference</h1>
+        <p>
+            Choose an initiative and explore how you can
+            support our community.
+        </p>
+        <a href="#donation-form">Choose How to Give</a>
+    </section>
+
+    <section class="donation-causes">
+        <h2>Choose a Cause</h2>
+
+        <label for="donation-search">Find a cause</label>
+        <input
+            type="search"
+            id="donation-search"
+            placeholder="Search initiatives"
+        >
+
+        <div id="donation-list" class="initiative-grid"></div>
+        <p id="donation-error" role="alert"></p>
+    </section>
+
+    <section id="donation-form">
+        <h2>Donation Details</h2>
+
+        <form id="giving-form">
+            <label for="donation-cause">Selected cause</label>
+            <select id="donation-cause" required>
+                <option value="">Choose a cause</option>
+            </select>
+
+            <label for="donation-amount">Amount (USD)</label>
+            <input
+                id="donation-amount"
+                type="number"
+                min="1"
+                max="1000000"
+                step="1"
+                value="10"
+                required
+            >
+
+            <label for="donor-name">Your name</label>
+            <input
+                id="donor-name"
+                type="text"
+                autocomplete="name"
+                maxlength="100"
+                required
+            >
+
+            <label for="donor-email">Email address</label>
+            <input
+                id="donor-email"
+                type="email"
+                autocomplete="email"
+                maxlength="254"
+                required
+            >
+
+            <label for="giving-frequency">Giving frequency</label>
+            <select id="giving-frequency">
+                <option value="once">One-time</option>
+                <option value="monthly">Monthly</option>
+            </select>
+
+            <label>
+                <input type="checkbox" id="remember-preference">
+                Remember my cause and amount on this device
+            </label>
+
+            <button type="submit">Review Donation</button>
+        </form>
+
+        <p id="donation-summary" aria-live="polite"></p>
+    </section>
+
+    <dialog id="donation-dialog" aria-labelledby="review-title">
+        <h2 id="review-title">Review Your Donation</h2>
+        <div id="review-details"></div>
+        <p>
+            This is a demonstration only. No payment will be processed.
+        </p>
+        <button type="button" id="edit-donation">Edit Details</button>
+        <button type="button" id="confirm-donation">
+            Confirm Demo
+        </button>
+    </dialog>
+
+    <p id="donation-status" role="status" aria-live="polite"></p>
+</main>
+
+<script type="module" src="./scripts/donation.js"></script>
+
+
+
+scripts/donation.js
+
+import {
+    fetchInitiatives,
+    renderInitiatives
+} from "./initiatives.js";
+
+const list = document.querySelector("#donation-list");
+const search = document.querySelector("#donation-search");
+const causeSelect = document.querySelector("#donation-cause");
+const form = document.querySelector("#giving-form");
+const amountInput = document.querySelector("#donation-amount");
+const remember = document.querySelector("#remember-preference");
+const summary = document.querySelector("#donation-summary");
+const error = document.querySelector("#donation-error");
+
+const dialog = document.querySelector("#donation-dialog");
+const reviewDetails = document.querySelector("#review-details");
+const editButton = document.querySelector("#edit-donation");
+const confirmButton = document.querySelector("#confirm-donation");
+const status = document.querySelector("#donation-status");
+
+let initiatives = [];
+let pendingDonation = null;
+
+function updateSummary() {
+    const cause = initiatives.find(
+        (item) => item.id === Number(causeSelect.value)
+    );
+
+    const amount = Number(amountInput.value);
+
+    if (!cause || !Number.isFinite(amount) || amount <= 0) {
+        summary.textContent = "Choose a cause and enter a valid amount.";
+        return;
+    }
+
+    summary.textContent =
+        `You selected ${cause.title} with a donation of $${amount.toFixed(2)}.`;
+}
+
+function showReview(donation) {
+    pendingDonation = donation;
+    reviewDetails.replaceChildren();
+
+    const lines = [
+        `Cause: ${donation.causeTitle}`,
+        `Amount: $${donation.amount.toFixed(2)} USD`,
+        `Frequency: ${donation.frequency}`,
+        `Donor: ${donation.name}`,
+        `Email: ${donation.email}`
+    ];
+
+    lines.forEach((line) => {
+        const paragraph = document.createElement("p");
+        paragraph.textContent = line;
+        reviewDetails.append(paragraph);
+    });
+
+    dialog.showModal();
+}
+
+async function initializeDonationPage() {
+    try {
+        initiatives = await fetchInitiatives();
+
+        // Populate cause selector from fetched data.
+        initiatives.forEach((item) => {
+            const option = document.createElement("option");
+            option.value = item.id;
+            option.textContent = item.title;
+            causeSelect.append(option);
+        });
+
+        renderInitiatives(list, initiatives, "Select This Cause");
+
+        const saved = JSON.parse(
+            localStorage.getItem("mutualite-donation-preference") || "null"
+        );
+
+        if (saved) {
+            if (initiatives.some((item) => item.id === saved.causeId)) {
+                causeSelect.value = String(saved.causeId);
+            }
+
+            if (Number.isFinite(saved.amount) &&
+                saved.amount >= 1 && saved.amount <= 1000000) {
+                amountInput.value = String(saved.amount);
+                remember.checked = true;
+            }
+        }
+
+        updateSummary();
+    } catch {
+        error.textContent =
+            "Donation opportunities could not be loaded. Please try again later.";
+    }
+}
+
+search.addEventListener("input", () => {
+    const term = search.value.trim().toLowerCase();
+
+    const filtered = initiatives.filter((item) =>
+        `${item.title} ${item.category} ${item.description}`
+            .toLowerCase()
+            .includes(term)
+    );
+
+    renderInitiatives(list, filtered, "Select This Cause");
+});
+
+list.addEventListener("click", (event) => {
+    const button = event.target.closest(".details-button");
+
+    if (!button) return;
+
+    causeSelect.value = button.dataset.id;
+    updateSummary();
+
+    document.querySelector("#donation-form").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+});
+
+causeSelect.addEventListener("change", updateSummary);
+amountInput.addEventListener("input", updateSummary);
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    const amount = Number(amountInput.value);
+
+    if (!Number.isFinite(amount) || amount < 1 || amount > 1000000) {
+        amountInput.setCustomValidity("Enter an amount between $1 and $1,000,000.");
+        amountInput.reportValidity();
+        amountInput.setCustomValidity("");
+        return;
+    }
+
+    const cause = initiatives.find(
+        (item) => item.id === Number(causeSelect.value)
+    );
+
+    if (!cause) {
+        status.textContent = "Please select a valid cause.";
+        return;
+    }
+
+    const donation = {
+        causeId: cause.id,
+        causeTitle: cause.title,
+        amount,
+        frequency: document.querySelector("#giving-frequency").value,
+        name: document.querySelector("#donor-name").value.trim(),
+        email: document.querySelector("#donor-email").value.trim()
+    };
+
+    if (remember.checked) {
+        // Save only non-sensitive preferences, not donor details.
+        localStorage.setItem(
+            "mutualite-donation-preference",
+            JSON.stringify({
+                causeId: donation.causeId,
+                amount: donation.amount
+            })
+        );
+    } else {
+        localStorage.removeItem("mutualite-donation-preference");
+    }
+
+    showReview(donation);
+});
+
+editButton.addEventListener("click", () => {
+    dialog.close();
+});
+
+confirmButton.addEventListener("click", () => {
+    if (!pendingDonation) return;
+
+    // Coursework demo: this does not process or record a real payment.
+    dialog.close();
+    status.textContent =
+        "Demo confirmed. No payment was made. Thank you for supporting Mutualité.";
+
+    pendingDonation = null;
+});
+
+dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) dialog.close();
+});
+
+initializeDonationPage();
+
+
+
+7. Shared CSS for both pages
+Add this to styles/base.css. You can adapt the colors to your existing Mutualité palette.
+
+:root {
+    --primary: #245b4b;
+    --primary-dark: #173f36;
+    --accent: #d6a84f;
+    --surface: #ffffff;
+    --background: #f5f7f5;
+    --text: #252b28;
+    --muted: #626b65;
+    --border: #d9e1dc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    background: var(--background);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+main section {
+    padding: 2rem 1rem;
+}
+
+.hero,
+.donation-hero {
+    padding: 5rem 1.5rem;
+    color: white;
+    background: linear-gradient(
+        rgb(16 45 36 / 75%),
+        rgb(16 45 36 / 85%)
+    );
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: auto;
+}
+
+.call-to-action,
+.donation-hero a,
+button {
+    display: inline-block;
+    padding: 0.75rem 1.2rem;
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    background: var(--primary);
+    color: white;
+    font: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+button:hover,
+.call-to-action:hover,
+.donation-hero a:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.programs,
+.donation-causes,
+#donation-form,
+.about-intro {
+    width: min(100%, 1100px);
+    margin-inline: auto;
+}
+
+.initiative-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.initiative-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    box-shadow: 0 3px 12px rgb(0 0 0 / 5%);
+}
+
+.initiative-card h3 {
+    margin: 0;
+    color: var(--primary);
+}
+
+.initiative-card p {
+    margin: 0.25rem 0;
+}
+
+.initiative-card .details-button {
+    margin-top: auto;
+}
+
+input,
+select {
+    width: 100%;
+    max-width: 100%;
+    margin: 0.35rem 0 1rem;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: white;
+    color: var(--text);
+    font: inherit;
+}
+
+#donation-form form {
+    display: grid;
+    gap: 0.25rem;
+    max-width: 600px;
+}
+
+#donation-form form > label {
+    font-weight: 600;
+}
+
+#donation-form input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+dialog {
+    width: min(90%, 550px);
+    max-height: 85vh;
+    overflow-y: auto;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    color: var(--text);
+    background: white;
+}
+
+dialog::backdrop {
+    background: rgb(0 0 0 / 55%);
+}
+
+#program-error,
+#donation-error {
+    color: #a32121;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+
+Add a separate styles/large.css for larger screens:
+
+@media (min-width: 48rem) {
+    main section {
+        padding: 3rem 2rem;
+    }
+
+    .initiative-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero,
+    .donation-hero {
+        padding-block: 7rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .initiative-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+
+Link both stylesheets in the <head> of each page:
+<link rel="stylesheet" href="./styles/base.css">
+<link rel="stylesheet" href="./styles/large.css">
+
+
+8. How the requirements are satisfied
+Assignment requirement	Implementation
+Fetch API and JSON parsing	fetchInitiatives() in initiatives.js
+try...catch error handling	Data loading on both pages
+At least 15 dynamic items	15 initiative records in JSON
+Four distinct properties per item	Title, category, location, description, funding target
+Local storage	Saved category and donation preferences
+Modal dialog	Initiative details and donation review
+DOM manipulation	querySelector, createElement, textContent, append
+Event listeners	click, input, change, submit
+Array methods	map, filter, forEach, find
+Template literals	Dynamic messages and card values
+ES modules	export and import between JS files
+Two final implementation notes:
+- Test the website through VS Code Live Server or GitHub Pages, rather than opening the HTML file directly with file://, because browser security restrictions can prevent JSON fetching.
+- If you deploy to GitHub Pages, check that the directory names and relative paths match your actual project, including capitalization. Also ensure the donation confirmation remains clearly labeled as a demonstration until a real payment provider is integrated.
