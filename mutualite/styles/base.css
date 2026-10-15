@@ -722,14 +722,21 @@ footer a:hover {
 .social-links,
 .footer-bottom {
     width: 100%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    width: 100%;
     max-width: var(--max-width);
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0 auto;
 }
 
 .contact-info,
-.social-links {
-    padding-bottom: 1.5rem;
+.social-links,
+.footer-resources {
+    min-width: 0;
 }
 
 .contact-info p {
@@ -764,12 +771,26 @@ footer a:hover {
     object-fit: contain;
 }
 
+.footer-resource-list {
+    display: grid;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-resource-list a {
+    display: inline-block;
+    overflow-wrap: anywhere;
+}
+
 /* Footer copyright and modification date */
 .footer-bottom {
+    grid-column: 1 / -1;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    padding-top: 1.25rem;
+    padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.25);
     font-size: 0.85rem;
 }

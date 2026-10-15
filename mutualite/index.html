@@ -98,6 +98,11 @@
             </div>
         </section>
 
+        <section class="rwanda-weather" id="weather" aria-labelledby="weather-heading">
+            <h2 id="weather-heading">Rwanda weather</h2>
+            <p id="weather-status" class="feed-status" role="status" aria-live="polite">Loading current conditions…</p>
+        </section>
+
         <section class="top-comments" aria-labelledby="community-voices-title">
             <h2 id="community-voices-title">Community voices</h2>
             <p class="lead">Stories and reflections about generosity, charitable work, and neighbors supporting neighbors.</p>
@@ -111,15 +116,11 @@
             <div id="spotlight-cards" class="spotlight-grid"></div>
             <a class="call-to-action spotlight-support" href="./support.html">Support a program</a>
         </section>
-        <section class="rwanda-weather" id="weather" aria-labelledby="weather-heading">
-            <h2 id="weather-heading">Rwanda weather</h2>
-            <p id="weather-status" class="feed-status" role="status" aria-live="polite">Loading current conditions…</p>
-        </section>
     </main>
 <footer>
-    <!-- Contact Information -->
-    <section class="contact-info">
-        <h3>Contact Information</h3>
+    <div class="footer-content">
+    <section class="contact-info" aria-labelledby="footer-contact-heading">
+        <h3 id="footer-contact-heading">Contact Information</h3>
 
         <p>
             123 Main Street<br>
@@ -139,14 +140,10 @@
 
 
     <!-- Social Links -->
-    <section class="social-links">
-        <h3>Follow Us</h3>
+    <section class="social-links" aria-labelledby="footer-social-heading">
+        <h3 id="footer-social-heading">Follow Us</h3>
 
         <ul>
-            <li>
-                <a href="">Loom Video Link</a>
-            </li>
-            <li><a href="">Resources</a></li>
             <li>
                 <a
                     href="https://www.linkedin.com/company/chamber"
@@ -177,9 +174,22 @@
         </ul>
     </section>
 
-    <!-- Footer Information -->
-    <section class="footer-bottom">
-        <h3>Footer Information</h3>
+    <section class="footer-resources" aria-labelledby="footer-resources-heading">
+        <h3 id="footer-resources-heading">Resources</h3>
+        <ul class="footer-resource-list">
+             <li>
+                <a href="https://www.loom.com/share/7217db547d3f41d9be0b1d2e83fd6f23" target="_blank">Loom video Link</a></li>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About Mutualité</a></li>
+            <li><a href="./about.html#programs">Programs</a></li>
+            <li><a href="./support.html">Support</a></li>
+            <li><a href="https://openweathermap.org/api" target="_blank" rel="noopener noreferrer">OpenWeatherMap weather API</a></li>
+            <li><a href="https://openweathermap.org/weather-conditions" target="_blank" rel="noopener noreferrer">OpenWeatherMap weather icons</a></li>
+            <li><a href="https://www.reddit.com/dev/api/" target="_blank" rel="noopener noreferrer">Reddit API</a></li>
+        </ul>
+    </section>
+
+    <section class="footer-bottom" aria-label="Copyright and page information">
 
         <p>
             &copy; <span id="copyright-year"></span> 🌺 MUHIRE BIENVENUE 🌺 WDD 231
@@ -191,6 +201,7 @@
         </span>
 
     </section>
+    </div>
 </footer>
 </body>
 <script type="module" src="./scripts/main.js"></script>

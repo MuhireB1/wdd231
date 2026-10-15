@@ -160,7 +160,13 @@ async function loadSpotlightPrograms() {
             throw new Error("No programs with annual beneficiary totals were found");
         }
 
-        const cards = topPrograms.map(program => {
+        const spotlightImages = [
+            "./images/tool-small.webp",
+            "./images/digital-small.webp",
+            "./images/community-small.webp"
+        ];
+
+        const cards = topPrograms.map((program, index) => {
             const article = document.createElement("article");
             const picture = document.createElement("picture");
             const mobileImage = document.createElement("source");
@@ -170,12 +176,14 @@ async function loadSpotlightPrograms() {
             const reach = document.createElement("p");
             const link = document.createElement("a");
 
+            const spotlightImage = spotlightImages[index] || spotlightImages[0];
+
             article.className = "program-card";
             picture.className = "program-image";
             mobileImage.media = "(max-width: 600px)";
-            mobileImage.srcset = "./images/small.webp";
-            image.src = "./images/medium.webp";
-            image.srcset = "./images/medium.webp 800w, ./images/large.webp 1600w";
+            mobileImage.srcset = spotlightImage;
+            image.src = spotlightImage;
+            image.srcset = `${spotlightImage} 800w`;
             image.sizes = "(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw";
             image.alt = `Community support through ${program.program_name}`;
             image.width = 1600;

@@ -1,5 +1,5 @@
 @media only screen and (min-width: 38rem) {
-    header, main, nav, footer {
+    header, main, nav {
         max-width: 900px;
         margin: 0 auto;
     }
@@ -25,14 +25,13 @@
         align-items: center;
         justify-content: center 
     }
-    footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    }
-
 }
 
 @media (min-width: 38rem) {
+  .footer-content {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .programs-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
