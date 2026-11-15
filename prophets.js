@@ -3,10 +3,18 @@ const cards = document.querySelector("#cards");
 
 // async/await function to fetch prophets data
 async function getProphetData() {
-    const response = await fetch(url);
-    const data = await response.json();
-    //console.table(data.prophets);
-    displayProphets(data.prophets);
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTPS Error ${response.status}`);
+        }
+        const data = await response.json();
+        
+        //Pass a function or console.table(data.prophets);
+        displayProphets(data.prophets);
+    } catch(error) {
+        console.error("Error occurred", error);
+    }
 }
 
 getProphetData();
@@ -19,6 +27,7 @@ const displayProphets = (prophets) => {
         let DOB = document.createElement('p');
         let POB = document.createElement('p');
         let portrait = document.createElement("img");
+        let moreInfo = document.createElement("span");
 
         // Build the h2 content out to show the prophet's full name
         fullName.textContent = `${prophet.name} ${prophet.lastname}`;
@@ -34,11 +43,14 @@ const displayProphets = (prophets) => {
         portrait.setAttribute("width", "340");
         portrait.setAttribute('height', '440');
 
+        moreInfo.innerHTML = `<a href="#">Learn More</a>`;
+
         // Append the section card with the created elements
         card.appendChild(fullName);
         card.appendChild(DOB);
         card.appendChild(POB);
         card.appendChild(portrait);
+        card.appendChild(moreInfo);
 
         cards.appendChild(card);
     });

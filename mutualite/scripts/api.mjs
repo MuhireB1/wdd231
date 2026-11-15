@@ -73,7 +73,7 @@ export async function fetchCurrentWeather() {
         if(!response.ok){
             throw new Error(`Error: ${response.status}`);
         }
-        return response.json();
+        return await response.json();
     } catch (error){
         console.log("Error fetching API", error);
         return null;
